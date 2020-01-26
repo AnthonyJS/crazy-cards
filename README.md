@@ -26,3 +26,9 @@
   - organisms
   - templates
   - pages
+
+# Considerations for further development
+
+- Other currencies
+- Internationalisation
+- Typescript

@@ -1,18 +1,47 @@
 import styled from 'styled-components'
 import Alignment from 'components/atoms/alignment'
 import Text from 'components/atoms/text'
+import PropTypes from 'prop-types'
 
-const Card = ({ name, status, salary }) => (
+const Card = ({
+  cardTitle,
+  apr,
+  balanceTransferOfferDuration,
+  purchaseOfferDuration,
+  credit
+}) => (
   <CardStyled>
     <Alignment justifyContent="center">
-      <Text as="h3" size="big">
-        {name}
+      <Text as="h3" variant="heading">
+        {cardTitle}
       </Text>
     </Alignment>
-    <Text size="medium">{status}</Text>
-    <Text size="small">{salary}</Text>
+    <div>
+      <Text>Apr: &nbsp;</Text>
+      <Text variant="bodyBold">{apr}%</Text>
+    </div>
+    <div>
+      <Text>Balance Transfer Offer Duration: &nbsp;</Text>
+      <Text variant="bodyBold">{balanceTransferOfferDuration} Months</Text>
+    </div>
+    <div>
+      <Text>Purchase Offer Duration:&nbsp;</Text>
+      <Text variant="bodyBold">{purchaseOfferDuration} Months</Text>
+    </div>
+    <div>
+      <Text>Credit Available: &nbsp;</Text>
+      <Text variant="bodyBold">£{credit}</Text>
+    </div>
   </CardStyled>
 )
+
+Card.propTypes = {
+  cardTitle: PropTypes.string,
+  apr: PropTypes.number,
+  balanceTransferOfferDuration: PropTypes.number,
+  purchaseOfferDuration: PropTypes.number,
+  credit: PropTypes.number
+}
 
 const CardStyled = styled.div`
   display: flex;
