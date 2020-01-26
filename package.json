@@ -7,13 +7,18 @@
     "start": "next start"
   },
   "dependencies": {
+    "formik": "^2.1.2",
+    "framer-motion": "^1.7.3",
     "next": "latest",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
-    "styled-components": "^4.0.0"
+    "styled-components": "^4.0.0",
+    "styled-system": "^5.1.4"
   },
   "devDependencies": {
-    "babel-plugin-styled-components": "^1.8.0"
+    "babel-plugin-module-resolver": "^4.0.0",
+    "babel-plugin-styled-components": "^1.8.0",
+    "react-testing-library": "^8.0.1"
   },
   "license": "ISC"
 }

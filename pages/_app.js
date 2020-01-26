@@ -1,18 +1,51 @@
 import App from 'next/app'
 import React from 'react'
-import { ThemeProvider } from 'styled-components'
+import { createGlobalStyle, ThemeProvider } from 'styled-components'
+
+
+const smallMinWidth = 320
+
+const mediumMinWidth = 764
+
+const largeMinWidth = 1028
+
+const extraLargeMinWidth = 1366
+const breakpoints = ['0', '764px', '1028px', '1366px']
+
+// aliases
+breakpoints.s = breakpoints[0]
+breakpoints.m = breakpoints[1]
+breakpoints.l = breakpoints[2]
+breakpoints.xl = breakpoints[3]
+
 
 const theme = {
   colors: {
-    primary: '#0070f3',
+    black: '#000e1a',
+    white: '#fff',
+    blue: '#007ce0',
+    navy: '#004175',
   },
+  space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
+  breakpoints
 }
+
+const GlobalStyle = createGlobalStyle`
+  html {
+    box-sizing: border-box;
+  }
+
+  *, *:before, *:after {   
+    box-sizing: inherit;
+  }
+`
 
 export default class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props
     return (
       <ThemeProvider theme={theme}>
+        <GlobalStyle />
         <Component {...pageProps} />
       </ThemeProvider>
     )
