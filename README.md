@@ -6,6 +6,8 @@
 
 `yarn storybook`
 
+`yarn test`
+
 # Technologies
 
 - React

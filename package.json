@@ -6,7 +6,8 @@
     "build": "next build",
     "start": "next start",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "test": "jest"
   },
   "dependencies": {
     "formik": "^2.1.2",
@@ -29,5 +30,8 @@
     "babel-plugin-styled-components": "^1.8.0",
     "react-testing-library": "^8.0.1"
   },
-  "license": "ISC"
+  "license": "ISC",
+  "jest": {
+    "rootDir": "./src"
+  }
 }
