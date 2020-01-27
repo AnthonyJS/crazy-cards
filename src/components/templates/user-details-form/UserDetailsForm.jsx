@@ -5,11 +5,12 @@ import Router from 'next/router'
 
 const validate = values => {
   const errors = {}
-  // if (!values.email) {
-  //   errors.email = 'Required'
-  // } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
-  //   errors.email = 'Invalid email address'
-  // }
+  if (isNaN(values.salary)) {
+    errors.salary = 'Must be a number'
+  }
+  if (!isNaN(values.salary) && values.salary <= 0) {
+    errors.salary = 'Must be greater than 0'
+  }
   return errors
 }
 
@@ -58,6 +59,8 @@ const UserDetailsForm = () => {
               type="text"
               onChange={handleChange}
               onBlur={handleBlur}
+              errors={errors.salary}
+              touched={touched.salary}
             />
 
             <TextInput
