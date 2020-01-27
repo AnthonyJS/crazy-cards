@@ -12,8 +12,8 @@ const CardsForUser = () => {
 
   return (
     <div>
-      {/* <pre>{JSON.stringify(userDetails)}</pre> */}
-      {/* <pre>{JSON.stringify(cards)}</pre> */}
+      <pre>{JSON.stringify(userDetails)}</pre>
+      <pre>{JSON.stringify(cards)}</pre>
       {cards.map(card => (
         <Card key={card.id} {...card} />
       ))}
