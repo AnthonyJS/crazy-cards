@@ -1,6 +1,7 @@
 import App from 'next/app'
 import React from 'react'
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
+import { UserProvider } from 'contexts/UserContext'
 
 // TODO: Move breakpoints and theme to a separate file
 const smallMinWidth = 320
@@ -44,8 +45,10 @@ export default class MyApp extends App {
     const { Component, pageProps } = this.props
     return (
       <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <Component {...pageProps} />
+        <UserProvider>
+          <GlobalStyle />
+          <Component {...pageProps} />
+        </UserProvider>
       </ThemeProvider>
     )
   }

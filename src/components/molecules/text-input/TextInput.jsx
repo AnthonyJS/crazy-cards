@@ -11,7 +11,7 @@ const TextInput = ({
   touched
 }) => (
   <div>
-    <label for={id}>{label}</label>
+    <label htmlFor={id}>{label}</label>
     <StyledInput
       type={type}
       id={id}
