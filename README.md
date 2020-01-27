@@ -34,3 +34,7 @@
 - Other currencies
 - Internationalisation
 - Typescript
+- SEO
+- Analytics
+- Accessibility audit
+- Security audit
