@@ -1,4 +1,4 @@
 import React from 'react'
-import UserDetailsFrom from 'components/templates/user-details-form'
+import UserDetailsForm from 'components/templates/user-details-form'
 
-export default () => <UserDetailsFrom />
+export default () => <UserDetailsForm />

@@ -1,39 +1,18 @@
-import styled from 'styled-components'
+import { useField } from 'formik'
 
-const TextInput = ({
-  id,
-  label,
-  type,
-  value,
-  onChange,
-  onBlur,
-  errors,
-  touched
-}) => (
-  <div>
-    <label htmlFor={id}>{label}</label>
-    <StyledInput
-      type={type}
-      id={id}
-      name={id}
-      onChange={onChange}
-      onBlur={onBlur}
-      value={value}
-    ></StyledInput>
-    <StyledError>{errors && touched && errors}</StyledError>
-  </div>
-)
+const MyTextInput = ({ label, ...props }) => {
+  // useField() returns [formik.getFieldProps(), formik.getFieldMeta()]
+  // which we can spread on <input> and also replace ErrorMessage entirely.
+  const [field, meta] = useField(props)
+  return (
+    <div>
+      <label htmlFor={props.id || props.name}>{label}</label>
+      <input className="text-input" {...field} {...props} />
+      {meta.touched && meta.error ? (
+        <div className="error">{meta.error}</div>
+      ) : null}
+    </div>
+  )
+}
 
-const StyledError = styled.span`
-  color: red;
-  font-size: 20px;
-`
-
-const StyledInput = styled.input`
-  font-family: 'arial';
-  border-radius: 20px;
-  padding: 8px;
-  border: 1px solid #aaa;
-`
-
-export default TextInput
+export default MyTextInput

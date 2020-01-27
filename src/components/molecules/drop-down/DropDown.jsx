@@ -1,36 +1,23 @@
-import styled from 'styled-components'
+import { useField } from 'formik'
+import styled from '@emotion/styled'
 
-const DropDown = ({
-  id,
-  options,
-  label,
-  value,
-  onChange,
-  onBlur,
-  errors,
-  touched
-}) => (
-  <>
-    <label htmlFor={id}>{label}</label>
-    <select
-      name="employmentStatus"
-      value={value}
-      onChange={onChange}
-      onBlur={onBlur}
-    >
-      <option value="nope" label="Select summat" selected />
-      {options.map(option => (
-        <option value={option} label={option} />
-      ))}
-    </select>
-    <StyledError>{errors && touched && errors}</StyledError>
-  </>
-)
+const DropDown = ({ label, ...props }) => {
+  const [field, meta] = useField(props)
+  return (
+    <>
+      <StyledLabel htmlFor={props.id || props.name}>{label}</StyledLabel>
+      <StyledSelect {...field} {...props} />
+      {meta.touched && meta.error ? (
+        <StyledErrorMessage>{meta.error}</StyledErrorMessage>
+      ) : null}
+    </>
+  )
+}
 
-// TODO - make a component that text and drop down share for this
-const StyledError = styled.span`
-  color: red;
-  font-size: 20px;
-`
+const StyledSelect = styled.select``
+
+const StyledErrorMessage = styled.div``
+
+const StyledLabel = styled.label``
 
 export default DropDown

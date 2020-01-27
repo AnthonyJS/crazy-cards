@@ -1,36 +1,33 @@
+import React from 'react'
 import { Formik, Form } from 'formik'
+import * as Yup from 'yup'
 import TextInput from 'components/molecules/text-input'
 import DropDown from 'components/molecules/drop-down'
 import { useUserContext } from 'contexts/UserContext'
 import Router from 'next/router'
 import EmploymentStatus from 'tokens/employment-status'
 
-const validate = values => {
-  const errors = {}
-  if (isNaN(values.annualIncome)) {
-    errors.annualIncome = 'Must be a number'
-  }
-  if (!isNaN(values.annualIncome) && values.annualIncome <= 0) {
-    errors.annualIncome = 'Must be greater than 0'
-  }
-  // console.log('values.employmentStatus', values.employmentStatus)
-  // if (
-  //   values.employmentStatus === 'nope' ||
-  //   values.employmentStatus === undefined
-  // ) {
-  //   errors.employmentStatus = 'needs selection'
-  // }
-  return errors
-}
-
-const UserDetailsForm = () => {
+const SignupForm = () => {
   const { userDetails, setUserDetails } = useUserContext()
 
   return (
     <>
+      <h1>Get your status!</h1>
       <Formik
-        initialValues={{}}
-        validate={validate}
+        initialValues={{
+          ...userDetails
+        }}
+        validationSchema={Yup.object({
+          firstName: Yup.string()
+            .max(15, 'Must be 15 characters or less')
+            .required('Required'),
+          lastName: Yup.string()
+            .max(20, 'Must be 20 characters or less')
+            .required('Required'),
+          employmentStatus: Yup.string()
+            .oneOf(EmploymentStatus, 'Invalid employment status')
+            .required('Required')
+        })}
         onSubmit={(values, { setSubmitting }) => {
           setUserDetails({
             ...values
@@ -38,56 +35,40 @@ const UserDetailsForm = () => {
           Router.push('/results')
         }}
       >
-        {({
-          values,
-          errors,
-          touched,
-          handleChange,
-          handleBlur,
-          handleSubmit,
-          isSubmitting
-        }) => (
-          <Form onSubmit={handleSubmit}>
-            <TextInput
-              id="firstname"
-              label="First name"
-              type="text"
-              onChange={handleChange}
-              onBlur={handleBlur}
-            />
-            <TextInput
-              id="surname"
-              label="Surname"
-              type="text"
-              onChange={handleChange}
-              onBlur={handleBlur}
-            />
-            <TextInput
-              id="annualIncome"
-              label="Annual Income"
-              type="text"
-              onChange={handleChange}
-              onBlur={handleBlur}
-              errors={errors.annualIncome}
-              touched={touched.annualIncome}
-            />
-            <DropDown
-              id="employmentStatus"
-              options={EmploymentStatus}
-              label="Employment Status"
-              onChange={handleChange}
-              onBlur={handleBlur}
-              errors={errors.employmentStatus}
-              touched={touched.employmentStatus}
-            />
-            <button type="submit" disabled={isSubmitting}>
-              Submit
-            </button>
-          </Form>
-        )}
+        <Form>
+          <TextInput
+            label="First Name"
+            name="firstName"
+            type="text"
+            placeholder="Jane"
+          />
+          <TextInput
+            label="Last Name"
+            name="lastName"
+            type="text"
+            placeholder="Doe"
+          />
+          <TextInput
+            label="Annual income"
+            name="annualIncome"
+            type="text"
+            placeholder="43"
+          />
+
+          <DropDown label="Employment Status" name="employmentStatus">
+            <option value="">Select an employment status</option>
+            {EmploymentStatus.map(status => (
+              <option key={status} value={status}>
+                {status}
+              </option>
+            ))}
+          </DropDown>
+
+          <button type="submit">Submit</button>
+        </Form>
       </Formik>
     </>
   )
 }
 
-export default UserDetailsForm
+export default SignupForm
