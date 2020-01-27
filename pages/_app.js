@@ -38,6 +38,15 @@ const GlobalStyle = createGlobalStyle`
   *, *:before, *:after {   
     box-sizing: inherit;
   }
+
+  ul {
+    list-style: none;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
 `
 
 export default class MyApp extends App {

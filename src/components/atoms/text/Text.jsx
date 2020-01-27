@@ -12,7 +12,7 @@ const Text = styled.span(
         fontSize: 5
       },
       subHeading: {
-        fontSize: 3
+        fontSize: 4
       },
       body: {
         fontSize: 1

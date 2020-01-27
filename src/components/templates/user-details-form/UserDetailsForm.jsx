@@ -5,11 +5,11 @@ import Router from 'next/router'
 
 const validate = values => {
   const errors = {}
-  if (isNaN(values.salary)) {
-    errors.salary = 'Must be a number'
+  if (isNaN(values.annualIncome)) {
+    errors.annualIncome = 'Must be a number'
   }
-  if (!isNaN(values.salary) && values.salary <= 0) {
-    errors.salary = 'Must be greater than 0'
+  if (!isNaN(values.annualIncome) && values.annualIncome <= 0) {
+    errors.annualIncome = 'Must be greater than 0'
   }
   return errors
 }
@@ -54,21 +54,13 @@ const UserDetailsForm = () => {
               onBlur={handleBlur}
             />
             <TextInput
-              id="salary"
-              label="Salary"
+              id="annualIncome"
+              label="Annual Income"
               type="text"
               onChange={handleChange}
               onBlur={handleBlur}
-              errors={errors.salary}
-              touched={touched.salary}
-            />
-
-            <TextInput
-              id="password"
-              label="Password"
-              type="password"
-              onChange={handleChange}
-              onBlur={handleBlur}
+              errors={errors.annualIncome}
+              touched={touched.annualIncome}
             />
             <button type="submit" disabled={isSubmitting}>
               Submit

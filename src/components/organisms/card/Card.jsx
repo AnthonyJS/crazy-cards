@@ -6,13 +6,13 @@ import PropTypes from 'prop-types'
 const Card = ({
   cardTitle,
   apr,
-  balanceTransferOfferDuration,
-  purchaseOfferDuration,
-  credit
+  balanceTransferOfferDurationMonths,
+  purchaseOfferDurationMonths,
+  creditAvailable
 }) => (
   <CardStyled>
     <Alignment justifyContent="center">
-      <Text as="h3" variant="heading">
+      <Text as="h3" variant="subHeading">
         {cardTitle}
       </Text>
     </Alignment>
@@ -22,15 +22,17 @@ const Card = ({
     </div>
     <div>
       <Text>Balance Transfer Offer Duration: &nbsp;</Text>
-      <Text variant="bodyBold">{balanceTransferOfferDuration} Months</Text>
+      <Text variant="bodyBold">
+        {balanceTransferOfferDurationMonths} Months
+      </Text>
     </div>
     <div>
       <Text>Purchase Offer Duration:&nbsp;</Text>
-      <Text variant="bodyBold">{purchaseOfferDuration} Months</Text>
+      <Text variant="bodyBold">{purchaseOfferDurationMonths} Months</Text>
     </div>
     <div>
       <Text>Credit Available: &nbsp;</Text>
-      <Text variant="bodyBold">£{credit}</Text>
+      <Text variant="bodyBold">£{creditAvailable}</Text>
     </div>
   </CardStyled>
 )
@@ -38,9 +40,9 @@ const Card = ({
 Card.propTypes = {
   cardTitle: PropTypes.string,
   apr: PropTypes.number,
-  balanceTransferOfferDuration: PropTypes.number,
-  purchaseOfferDuration: PropTypes.number,
-  credit: PropTypes.number
+  balanceTransferOfferDurationMonths: PropTypes.number,
+  purchaseOfferDurationMonths: PropTypes.number,
+  creditAvailable: PropTypes.number
 }
 
 const CardStyled = styled.div`
@@ -48,9 +50,10 @@ const CardStyled = styled.div`
   flex-direction: column;
   /* TODO: Make these responsive */
   width: 350px;
-  height: 200px;
+  height: 225px;
   border-radius: 25px;
   padding: 20px;
+  margin: 20px;
   /* TODO: Use tokens for colors */
   border: 1px solid #aaa;
   box-shadow: 10px 10px 16px #888888;

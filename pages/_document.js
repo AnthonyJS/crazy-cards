@@ -1,5 +1,6 @@
 import Document, { Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
+import Text from 'components/atoms/text'
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -32,7 +33,9 @@ export default class MyDocument extends Document {
       <html>
         <Head>{this.props.styleTags}</Head>
         <body>
-          parent
+          <Text as="h1" variant="heading">
+            Crazy Cards
+          </Text>
           <Main />
           <NextScript />
         </body>
