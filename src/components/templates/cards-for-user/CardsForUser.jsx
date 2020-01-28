@@ -3,7 +3,7 @@ import eligibility from 'business-logic/eligibility'
 import { useEffect, useState, useReducer } from 'react'
 import availableCards from 'business-logic/availableCards'
 import Card from 'components/organisms/card'
-import Text from 'components/atoms/text'
+import { Text } from 'components/atoms'
 import styled from 'styled-components'
 
 const actions = {

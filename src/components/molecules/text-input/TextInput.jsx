@@ -1,7 +1,6 @@
 import { useField } from 'formik'
 import styled from 'styled-components'
-import Text from 'components/atoms/text'
-import Box from 'components/atoms/box'
+import { Text, Box } from 'components/atoms'
 
 const MyTextInput = ({ label, ...props }) => {
   const [field, meta] = useField(props)

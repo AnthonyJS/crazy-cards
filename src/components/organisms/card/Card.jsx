@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import Alignment from 'components/atoms/alignment'
-import Text from 'components/atoms/text'
+import { Text } from 'components/atoms'
 import PropTypes from 'prop-types'
 
 const Card = ({

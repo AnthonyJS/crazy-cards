@@ -1,7 +1,6 @@
 import { useField } from 'formik'
 import styled from '@emotion/styled'
-import Text from 'components/atoms/text'
-import Box from 'components/atoms/box'
+import { Text, Box } from 'components/atoms'
 
 const DropDown = ({ label, ...props }) => {
   const [field, meta] = useField(props)
