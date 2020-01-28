@@ -62,8 +62,7 @@ const CardStyled = styled.div`
   box-shadow: 10px 10px 16px #888888;
   opacity: 0.7;
   background: linear-gradient(45deg, #2600c3, #e7005c);
-  transition: opacity 0.5s;
-  transition: transform 0.25s;
+  transition: opacity 0.5s, transform 0.25s;
   ${({ selected }) => selected && 'transform: scale(1.1)'};
 
   & :hover {

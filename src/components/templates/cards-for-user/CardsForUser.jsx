@@ -3,6 +3,7 @@ import eligibility from 'business-logic/eligibility'
 import { useEffect, useState, useReducer } from 'react'
 import availableCards from 'business-logic/availableCards'
 import Card from 'components/organisms/card'
+import Text from 'components/atoms/text'
 
 const actions = {
   SELECT_CARD: 'SELECT_CARD'
@@ -33,8 +34,13 @@ const CardsForUser = () => {
 
   return (
     <div>
-      <pre>{JSON.stringify(userDetails)}</pre>
-      <pre>{JSON.stringify(cards)}</pre>
+      <CreditAvailable
+        amount={availableCards
+          .filter(card => selectedCards.includes(card.id))
+          .reduce((acc, curr) => acc + curr.creditAvailable, 0)}
+      />
+      {/* <pre>{JSON.stringify(userDetails)}</pre>
+      <pre>{JSON.stringify(cards)}</pre> */}
       {cards.map(card => (
         <Card
           onClick={() => clickHandler(card.id)}
@@ -46,5 +52,14 @@ const CardsForUser = () => {
     </div>
   )
 }
+
+const CreditAvailable = ({ amount }) => (
+  <div>
+    <div>
+      <Text variant="subHeading">Credit available</Text>
+    </div>
+    <Text variant="heading">£{amount}</Text>
+  </div>
+)
 
 export default CardsForUser
