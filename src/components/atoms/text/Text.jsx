@@ -3,22 +3,21 @@ import { variant, fontFamily, lineHeight } from 'styled-system'
 
 const Text = styled.span(
   {
-    fontFamily: 'Arial, Helvetica, sans-serif',
     lineHeight: '2em'
   },
   variant({
     variants: {
       heading: {
-        fontSize: 5
+        fontSize: '5em'
       },
       subHeading: {
-        fontSize: 4
+        fontSize: '4em'
       },
       body: {
-        fontSize: 1
+        fontSize: '1em'
       },
       bodyBold: {
-        fontSize: 1,
+        fontSize: '2em',
         fontWeight: 800
       }
     }

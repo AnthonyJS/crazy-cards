@@ -56,15 +56,16 @@ const SignupForm = () => {
           />
 
           <DropDown label="Employment Status" name="employmentStatus">
-            <option value="">Select an employment status</option>
+            <option value="">-- select --</option>
             {EmploymentStatus.map(status => (
               <option key={status} value={status}>
                 {status}
               </option>
             ))}
           </DropDown>
-
-          <button type="submit">Submit</button>
+          <div>
+            <button type="submit">Submit</button>
+          </div>
         </Form>
       </Formik>
     </>
