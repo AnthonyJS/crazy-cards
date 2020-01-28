@@ -11,11 +11,15 @@ const DropDown = ({ label, ...props }) => {
       <label htmlFor={props.id || props.name}>
         <Text>{label}</Text>
       </label>
+
+      {meta.touched && meta.error ? (
+        <Text variant="error">
+          {' / '}
+          {meta.error}
+        </Text>
+      ) : null}
       <div>
         <StyledSelect {...field} {...props} />
-        {meta.touched && meta.error ? (
-          <Text variant="error">{meta.error}</Text>
-        ) : null}
       </div>
     </Box>
   )

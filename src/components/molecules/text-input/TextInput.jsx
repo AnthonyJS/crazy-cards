@@ -12,13 +12,14 @@ const MyTextInput = ({ label, ...props }) => {
         <Text>{label}</Text>
       </label>
 
+      {meta.touched && meta.error ? (
+        <Text variant="error" className="error">
+          {' / '}
+          {meta.error}
+        </Text>
+      ) : null}
       <div>
         <StyledInput className="text-input" {...field} {...props} />{' '}
-        {meta.touched && meta.error ? (
-          <Text variant="error" className="error">
-            {meta.error}
-          </Text>
-        ) : null}
       </div>
     </Box>
   )
