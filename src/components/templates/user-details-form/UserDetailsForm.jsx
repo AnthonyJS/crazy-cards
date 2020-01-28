@@ -3,6 +3,9 @@ import { Formik, Form } from 'formik'
 import * as Yup from 'yup'
 import TextInput from 'components/molecules/text-input'
 import DropDown from 'components/molecules/drop-down'
+import Button from 'components/atoms/button'
+import Box from 'components/atoms/box'
+import Text from 'components/atoms/text'
 import { useUserContext } from 'contexts/UserContext'
 import Router from 'next/router'
 import EmploymentStatus from 'tokens/employment-status'
@@ -48,9 +51,11 @@ const SignupForm = () => {
               </option>
             ))}
           </DropDown>
-          <div>
-            <button type="submit">Submit</button>
-          </div>
+          <Box py={4}>
+            <Button type="submit">
+              <Text>See my results</Text>
+            </Button>
+          </Box>
         </Form>
       </Formik>
     </>

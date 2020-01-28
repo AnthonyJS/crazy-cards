@@ -39,6 +39,7 @@ const GlobalStyle = createGlobalStyle`
 
   *, *:before, *:after {   
     box-sizing: inherit;
+    border: none;
 
   }
 
@@ -57,6 +58,8 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
 
   }
+
+
 
 
 `
