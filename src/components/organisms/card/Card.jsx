@@ -8,9 +8,11 @@ const Card = ({
   apr,
   balanceTransferOfferDurationMonths,
   purchaseOfferDurationMonths,
-  creditAvailable
+  creditAvailable,
+  selected,
+  onClick
 }) => (
-  <CardStyled>
+  <CardStyled selected={selected} onClick={onClick}>
     <Alignment justifyContent="center">
       <Text as="h3" variant="subHeading">
         {cardTitle}
@@ -50,13 +52,23 @@ const CardStyled = styled.div`
   flex-direction: column;
   /* TODO: Make these responsive */
   width: 350px;
-  height: 225px;
-  border-radius: 25px;
+  height: 200px;
+  border-radius: 7px;
   padding: 20px;
-  margin: 20px;
+  color: white;
+  margin: 30px;
+  cursor: pointer;
   /* TODO: Use tokens for colors */
-  border: 1px solid #aaa;
   box-shadow: 10px 10px 16px #888888;
+  opacity: 0.7;
+  background: linear-gradient(45deg, #2600c3, #e7005c);
+  transition: opacity 0.5s;
+  transition: transform 0.25s;
+  ${({ selected }) => selected && 'transform: scale(1.1)'};
+
+  & :hover {
+    opacity: 1;
+  }
 `
 
 export default Card
