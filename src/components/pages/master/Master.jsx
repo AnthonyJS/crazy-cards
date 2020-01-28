@@ -16,6 +16,8 @@ const Master = ({ children }) => (
 
 const Layout = styled.div`
   display: grid;
+  min-height: 100vh;
+  background-image: linear-gradient(120deg, #fccb90 0%, #d57eeb 100%);
   grid-template-columns: 20px 1fr 20px;
 
   ${media.m`
@@ -33,17 +35,14 @@ const Layout = styled.div`
 `
 
 const Content = styled.div`
-  background: salmon;
   grid-area: body;
 `
 
 const Header = styled.header`
-  background: tomato;
   grid-area: header;
 `
 
 const Footer = styled.footer`
-  background: teal;
   grid-area: footer;
 `
 

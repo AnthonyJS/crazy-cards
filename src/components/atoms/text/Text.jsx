@@ -2,22 +2,22 @@ import styled from 'styled-components'
 import { variant, fontFamily, lineHeight } from 'styled-system'
 
 const Text = styled.span(
-  {
-    lineHeight: '2em'
-  },
+  {},
   variant({
     variants: {
       heading: {
-        fontSize: '5em'
+        fontSize: '5em',
+        lineHeight: '2em'
       },
       subHeading: {
-        fontSize: '4em'
+        fontSize: '4em',
+        lineHeight: '1.5em'
       },
       body: {
-        fontSize: '1em'
+        fontSize: '1.5em'
       },
       bodyBold: {
-        fontSize: '2em',
+        fontSize: '1.5em',
         fontWeight: 800
       }
     }

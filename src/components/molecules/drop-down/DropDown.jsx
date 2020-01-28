@@ -17,7 +17,12 @@ const DropDown = ({ label, ...props }) => {
   )
 }
 
-const StyledSelect = styled.select``
+const StyledSelect = styled.select`
+  border-radius: 25px;
+  padding: 10px 15px 10px 15px;
+  border: none;
+  box-shadow: 10px 10px 13px -9px rgba(0, 0, 0, 0.47);
+`
 
 const StyledErrorMessage = styled.span``
 

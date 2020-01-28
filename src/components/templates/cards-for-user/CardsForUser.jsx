@@ -4,6 +4,7 @@ import { useEffect, useState, useReducer } from 'react'
 import availableCards from 'business-logic/availableCards'
 import Card from 'components/organisms/card'
 import Text from 'components/atoms/text'
+import styled from 'styled-components'
 
 const actions = {
   SELECT_CARD: 'SELECT_CARD'
@@ -34,11 +35,13 @@ const CardsForUser = () => {
 
   return (
     <div>
-      <CreditAvailable
-        amount={availableCards
-          .filter(card => selectedCards.includes(card.id))
-          .reduce((acc, curr) => acc + curr.creditAvailable, 0)}
-      />
+      <Fixed>
+        <CreditAvailable
+          amount={availableCards
+            .filter(card => selectedCards.includes(card.id))
+            .reduce((acc, curr) => acc + curr.creditAvailable, 0)}
+        />
+      </Fixed>
       {/* <pre>{JSON.stringify(userDetails)}</pre>
       <pre>{JSON.stringify(cards)}</pre> */}
       {cards.map(card => (
@@ -53,11 +56,16 @@ const CardsForUser = () => {
   )
 }
 
+const Fixed = styled.div`
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: teal;
+`
+
 const CreditAvailable = ({ amount }) => (
   <div>
-    <div>
-      <Text variant="subHeading">Credit available</Text>
-    </div>
+    <Text variant="subHeading">Credit available:&nbsp;</Text>
     <Text variant="heading">£{amount}</Text>
   </div>
 )

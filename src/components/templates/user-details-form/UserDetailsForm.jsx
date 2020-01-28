@@ -12,7 +12,7 @@ const SignupForm = () => {
 
   return (
     <>
-      <h1>Get your status!</h1>
+      <h1>Find out which cards could work for you...</h1>
       <Formik
         initialValues={{
           ...userDetails
@@ -36,24 +36,9 @@ const SignupForm = () => {
         }}
       >
         <Form>
-          <TextInput
-            label="First Name"
-            name="firstName"
-            type="text"
-            placeholder="Jane"
-          />
-          <TextInput
-            label="Last Name"
-            name="lastName"
-            type="text"
-            placeholder="Doe"
-          />
-          <TextInput
-            label="Annual income"
-            name="annualIncome"
-            type="text"
-            placeholder="43"
-          />
+          <TextInput label="First Name" name="firstName" type="text" />
+          <TextInput label="Last Name" name="lastName" type="text" />
+          <TextInput label="Annual income" name="annualIncome" type="text" />
 
           <DropDown label="Employment Status" name="employmentStatus">
             <option value="">-- select --</option>

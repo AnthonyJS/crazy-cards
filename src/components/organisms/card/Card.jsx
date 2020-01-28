@@ -14,9 +14,7 @@ const Card = ({
 }) => (
   <CardStyled selected={selected} onClick={onClick}>
     <Alignment justifyContent="center">
-      <Text as="h3" variant="subHeading">
-        {cardTitle}
-      </Text>
+      <Text variant="subHeading">{cardTitle}</Text>
     </Alignment>
     <div>
       <Text>Apr: &nbsp;</Text>
@@ -59,7 +57,7 @@ const CardStyled = styled.div`
   margin: 30px;
   cursor: pointer;
   /* TODO: Use tokens for colors */
-  box-shadow: 10px 10px 16px #888888;
+  box-shadow: 10px 10px 42px -3px rgba(0, 0, 0, 0.45);
   opacity: 0.7;
   background: linear-gradient(45deg, #2600c3, #e7005c);
   transition: opacity 0.5s, transform 0.25s;
