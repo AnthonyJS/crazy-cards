@@ -27,6 +27,10 @@ const SignupForm = () => {
           lastName: Yup.string()
             .max(20, 'Must be 20 characters or less')
             .required('Required'),
+          annualIncome: Yup.number()
+            .typeError('Annual income must be a number')
+            .positive('Annual income must be greater than 0')
+            .required('Required'),
           employmentStatus: Yup.string()
             .oneOf(EmploymentStatus, 'Invalid employment status')
             .required('Required')

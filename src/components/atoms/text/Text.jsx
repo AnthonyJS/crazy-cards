@@ -19,6 +19,10 @@ const Text = styled.span(
       bodyBold: {
         fontSize: '1.5em',
         fontWeight: 800
+      },
+      error: {
+        fontSize: '1.5em',
+        color: 'red'
       }
     }
   })

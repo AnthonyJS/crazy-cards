@@ -14,7 +14,7 @@ const DropDown = ({ label, ...props }) => {
       <div>
         <StyledSelect {...field} {...props} />
         {meta.touched && meta.error ? (
-          <StyledErrorMessage>{meta.error}</StyledErrorMessage>
+          <Text variant="error">{meta.error}</Text>
         ) : null}
       </div>
     </Box>
@@ -29,7 +29,5 @@ const StyledSelect = styled.select`
 `
 
 const StyledErrorMessage = styled.span``
-
-const StyledLabel = styled.label``
 
 export default DropDown
