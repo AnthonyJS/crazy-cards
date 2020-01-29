@@ -1,5 +1,5 @@
 import React from 'react'
-import { Formik, Form } from 'formik'
+import { Formik, Form, validateYupSchema } from 'formik'
 import * as Yup from 'yup'
 import { TextInput, DropDown } from 'components/molecules'
 import Button from 'components/atoms/button'
@@ -33,7 +33,10 @@ const SignupForm = () => {
             .positive('Annual income must be greater than 0')
             .required('Required'),
           employmentStatus: Yup.string()
-            .oneOf(Object.keys(EmploymentStatus), 'Invalid employment status')
+            .oneOf(
+              Object.values(EmploymentStatus).map(o => o.id),
+              'Invalid employment status'
+            )
             .required('Required')
         })}
         onSubmit={(values, { setSubmitting }) => {
@@ -51,9 +54,9 @@ const SignupForm = () => {
 
             <DropDown label="Employment Status" name="employmentStatus">
               <option value="">-- select --</option>
-              {Object.entries(EmploymentStatus).map(([key, value]) => (
-                <option key={key} value={key}>
-                  {value}
+              {Object.values(EmploymentStatus).map(value => (
+                <option key={value.id} value={value.id}>
+                  {value.label}
                 </option>
               ))}
             </DropDown>

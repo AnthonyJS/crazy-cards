@@ -1,4 +1,5 @@
 import AddresseeTitle from 'tokens/addresseeTitle'
+import EmploymentStatus from 'tokens/employmentStatus'
 
 const users = [
   {
@@ -6,7 +7,7 @@ const users = [
     firstName: 'Ollie',
     surname: 'Murphree',
     dob: new Date(1970, 1, 6),
-    employmentStatus: 'FULL_TIME',
+    employmentStatus: EmploymentStatus.FULL_TIME.id,
     annualIncome: 34000,
     houseNumber: '700',
     postcode: 'BS14 9PR'
@@ -16,7 +17,7 @@ const users = [
     firstName: 'Elizabeth',
     surname: 'Edmundson',
     dob: new Date(1984, 29, 5),
-    employmentStatus: 'STUDENT',
+    employmentStatus: EmploymentStatus.STUDENT.id,
     annualIncome: 17000,
     houseNumber: '177',
     postcode: 'PH12 8UW'
@@ -26,7 +27,7 @@ const users = [
     firstName: 'Trevor',
     surname: 'Rieck',
     dob: new Date(1990, 7, 8),
-    employmentStatus: 'PART_TIME',
+    employmentStatus: EmploymentStatus.PART_TIME.id,
     annualIncome: 15000,
     houseNumber: '343',
     postcode: 'TS25 2NF'

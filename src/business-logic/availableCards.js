@@ -1,3 +1,5 @@
+import EmploymentStatus from 'tokens/employmentStatus'
+
 const availableCards = [
   {
     id: 1,
@@ -6,7 +8,7 @@ const availableCards = [
     balanceTransferOfferDurationMonths: 0,
     purchaseOfferDurationMonths: 6,
     creditAvailable: 1200,
-    eligible: ['STUDENT']
+    eligible: [EmploymentStatus.STUDENT.id]
   },
   {
     id: 2,
