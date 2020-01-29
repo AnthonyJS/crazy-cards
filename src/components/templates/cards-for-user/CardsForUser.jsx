@@ -1,10 +1,10 @@
 import { useUserContext } from 'contexts/UserContext'
 import eligibility from 'business-logic/eligibility'
 import { useEffect, useState, useReducer } from 'react'
-import availableCards from 'business-logic/availableCards'
 import Card from 'components/organisms/card'
 import { Text } from 'components/atoms'
 import styled from 'styled-components'
+import axios from 'axios'
 
 const actions = {
   SELECT_CARD: 'SELECT_CARD'
@@ -24,6 +24,7 @@ const reducer = (state, action) => {
 const CardsForUser = () => {
   const { userDetails } = useUserContext()
   const [cards, setCards] = useState([])
+  const [availableCards, setAvailableCards] = useState([])
 
   const [selectedCards, dispatch] = useReducer(reducer, [])
 
@@ -31,7 +32,17 @@ const CardsForUser = () => {
     dispatch({ type: actions.SELECT_CARD, payload: id })
   }
 
-  useEffect(() => setCards(eligibility(userDetails, availableCards)), [])
+  useEffect(() => {
+    const loadAvailableCards = async () => {
+      const cards = await axios.get('/api/availablecards')
+      setAvailableCards(cards.data)
+    }
+    loadAvailableCards()
+  }, [])
+
+  useEffect(() => setCards(eligibility(userDetails, availableCards)), [
+    availableCards
+  ])
 
   return (
     <div>

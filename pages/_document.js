@@ -1,6 +1,5 @@
 import Document, { Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
-import Master from 'components/pages/master'
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -33,10 +32,7 @@ export default class MyDocument extends Document {
       <html>
         <Head>{this.props.styleTags}</Head>
         <body>
-          <Master>
-            <Main />
-          </Master>
-
+          <Main />
           <NextScript />
         </body>
       </html>

@@ -28,6 +28,4 @@ const StyledSelect = styled.select`
   box-shadow: 10px 10px 13px -9px rgba(0, 0, 0, 0.47);
 `
 
-const StyledErrorMessage = styled.span``
-
 export default DropDown

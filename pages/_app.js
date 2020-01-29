@@ -2,6 +2,7 @@ import App from 'next/app'
 import React from 'react'
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import { UserProvider } from 'contexts/UserContext'
+import Master from 'components/pages/master'
 
 // TODO: Move breakpoints and theme to a separate file
 const smallMinWidth = 320
@@ -58,10 +59,6 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
 
   }
-
-
-
-
 `
 
 export default class MyApp extends App {
@@ -71,7 +68,9 @@ export default class MyApp extends App {
       <ThemeProvider theme={theme}>
         <UserProvider>
           <GlobalStyle />
-          <Component {...pageProps} />
+          <Master>
+            <Component {...pageProps} />
+          </Master>
         </UserProvider>
       </ThemeProvider>
     )
