@@ -1,5 +1,4 @@
-import EmploymentStatus from 'tokens/employment-status'
-import AddresseeTitle from 'tokens/addressee-title'
+import AddresseeTitle from 'tokens/addresseeTitle'
 
 const users = [
   {

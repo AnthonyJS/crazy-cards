@@ -1,5 +1,3 @@
-import EmploymentStatus from 'tokens/employment-status'
-
 const availableCards = [
   {
     id: 1,
