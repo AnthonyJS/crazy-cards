@@ -8,7 +8,7 @@ const availableCards = [
     balanceTransferOfferDurationMonths: 0,
     purchaseOfferDurationMonths: 6,
     creditAvailable: 1200,
-    eligible: [EmploymentStatus[2][0]]
+    eligible: ['STUDENT']
   },
   {
     id: 2,
