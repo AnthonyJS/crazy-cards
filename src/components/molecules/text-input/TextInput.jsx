@@ -11,14 +11,11 @@ const MyTextInput = ({ label, ...props }) => {
         <Text>{label}</Text>
       </label>
 
-      {meta.touched && meta.error ? (
-        <Text variant="error" className="error">
-          {' / '}
-          {meta.error}
-        </Text>
-      ) : null}
+      {meta.touched && meta.error && (
+        <Text variant="error">{` / ${meta.error}`}</Text>
+      )}
       <div>
-        <StyledInput className="text-input" {...field} {...props} />{' '}
+        <StyledInput className="text-input" {...field} {...props} />
       </div>
     </Box>
   )
