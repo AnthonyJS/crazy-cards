@@ -1,5 +1,5 @@
 import { fullTimeUser, partTimeUser, studentUser } from './test-data/users'
-import availableCards from 'constants/availableCards'
+import cardData from 'constants/cardData'
 import eligibility from '../eligibility'
 import each from 'jest-each'
 
@@ -12,7 +12,7 @@ describe('Card eligibility', () => {
   `.test(
     'Customer who has employment type of "$user.employmentStatus" should be offered $expected student card(s)',
     ({ user, expected }) => {
-      const result = eligibility(user, availableCards)
+      const result = eligibility(user, cardData)
 
       expect(
         result.filter(card => card.cardTitle === 'Student Life')
@@ -28,7 +28,7 @@ describe('Card eligibility', () => {
   `.test(
     'Customer with salary of "$user.annualIncome" should be offered $expected Liquid Card(s)',
     ({ user, expected }) => {
-      const result = eligibility(user, availableCards)
+      const result = eligibility(user, cardData)
 
       expect(
         result.filter(card => card.cardTitle === 'Liquid Card')
@@ -44,7 +44,7 @@ describe('Card eligibility', () => {
   `.test(
     'Customer "$user.firstName $user.surname" should be offered $expected Anywhere Card(s)',
     ({ user, expected }) => {
-      const result = eligibility(user, availableCards)
+      const result = eligibility(user, cardData)
 
       expect(
         result.filter(card => card.cardTitle === 'Anywhere Card')

@@ -1,6 +1,6 @@
 import EmploymentStatus from 'constants/employmentStatus'
 
-const availableCards = [
+const cardData = [
   {
     id: 1,
     cardTitle: 'Student Life',
@@ -29,4 +29,4 @@ const availableCards = [
   }
 ]
 
-export default availableCards
+export default cardData
