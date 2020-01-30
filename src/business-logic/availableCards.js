@@ -1,4 +1,4 @@
-import EmploymentStatus from 'tokens/employmentStatus'
+import EmploymentStatus from 'constants/employmentStatus'
 
 const availableCards = [
   {

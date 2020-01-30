@@ -1,4 +1,4 @@
-import users from '../users'
+import users from './users'
 import availableCards from '../availableCards'
 import eligibility from '../eligibility'
 

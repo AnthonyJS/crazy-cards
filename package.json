@@ -34,6 +34,9 @@
   },
   "license": "ISC",
   "jest": {
-    "rootDir": "./src"
+    "rootDir": "./src",
+    "testMatch": [
+      "**/*test.[jt]s?(x)"
+    ]
   }
 }

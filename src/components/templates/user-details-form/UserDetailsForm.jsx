@@ -7,9 +7,9 @@ import Alignment from 'components/atoms/alignment'
 import { Text } from 'components/atoms'
 import { useUserContext } from 'contexts/UserContext'
 import Router from 'next/router'
-import EmploymentStatus from 'tokens/employmentStatus'
+import EmploymentStatus from 'constants/employmentStatus'
 import styled from 'styled-components'
-import media from 'tokens/deviceWidths'
+import media from 'constants/deviceWidths'
 
 const SignupForm = () => {
   const { userDetails, setUserDetails } = useUserContext()

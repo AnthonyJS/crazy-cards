@@ -1,6 +1,6 @@
 import Text from 'components/atoms/text'
 import styled from 'styled-components'
-import media from 'tokens/deviceWidths'
+import media from 'constants/deviceWidths'
 
 const Master = ({ children }) => (
   <Layout>
