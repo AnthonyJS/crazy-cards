@@ -1,7 +1,6 @@
 import { fullTimeUser, partTimeUser, studentUser } from './test-data/users'
 import availableCards from 'constants/availableCards'
 import eligibility from '../eligibility'
-import employmentStatus from 'constants/employmentStatus'
 import each from 'jest-each'
 
 describe('Card eligibility', () => {
@@ -10,7 +9,7 @@ describe('Card eligibility', () => {
     ${studentUser}  | ${1}
     ${fullTimeUser} | ${0}
     ${partTimeUser} | ${0}
-    `.test(
+  `.test(
     'Customer who has employment type of "$user.employmentStatus.label" should be offered $expected student card(s)',
     ({ user, expected }) => {
       const result = eligibility(user, availableCards)
@@ -42,7 +41,7 @@ describe('Card eligibility', () => {
     ${studentUser}  | ${1}
     ${fullTimeUser} | ${1}
     ${partTimeUser} | ${1}
-`.test(
+  `.test(
     'Customer "$user.firstName $user.surname" should be offered $expected Anywhere Card(s)',
     ({ user, expected }) => {
       const result = eligibility(user, availableCards)
