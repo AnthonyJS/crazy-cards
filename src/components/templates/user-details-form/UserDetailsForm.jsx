@@ -33,13 +33,11 @@ const SignupForm = () => {
             .positive('Annual income must be greater than 0')
             .required('Required'),
           employmentStatus: Yup.string()
-            .oneOf(
-              Object.values(EmploymentStatus).map(o => o.id),
-              'Invalid employment status'
-            )
+            .oneOf(Object.values(EmploymentStatus), 'Invalid employment status')
             .required('Required')
         })}
         onSubmit={(values, { setSubmitting }) => {
+          console.log('values', values)
           setUserDetails({
             ...values
           })
@@ -54,11 +52,16 @@ const SignupForm = () => {
 
             <DropDown label="Employment Status" name="employmentStatus">
               <option value="">-- select --</option>
-              {Object.values(EmploymentStatus).map(value => (
-                <option key={value.id} value={value.id}>
-                  {value.label}
-                </option>
-              ))}
+              {Object.entries(EmploymentStatus).map(([key, value]) => {
+                console.log('key', key)
+                console.log('value', value)
+
+                return (
+                  <option key={value} value={value}>
+                    {key}
+                  </option>
+                )
+              })}
             </DropDown>
           </Grid>
 
@@ -75,13 +78,12 @@ const SignupForm = () => {
 
 const Grid = styled.div`
   display: grid;
-
   grid-template-columns: 1fr;
+  grid-column-gap: 40px;
 
   ${media.m`
     grid-template-columns: 1fr 1fr;
   `}
-  grid-column-gap: 40px;
 `
 
 export default SignupForm

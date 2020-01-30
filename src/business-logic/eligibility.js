@@ -1,9 +1,6 @@
 const eligibility = (user, availableCards) => {
   return availableCards.filter(card => {
-    if (
-      card.eligible &&
-      !card.eligible.map(e => e.id).includes(user.employmentStatus.id)
-    )
+    if (card.eligible && !card.eligible.includes(user.employmentStatus))
       return false
 
     if (card.minimumSalary && user.annualIncome < card.minimumSalary)

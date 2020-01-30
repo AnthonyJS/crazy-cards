@@ -10,7 +10,7 @@ describe('Card eligibility', () => {
     ${fullTimeUser} | ${0}
     ${partTimeUser} | ${0}
   `.test(
-    'Customer who has employment type of "$user.employmentStatus.label" should be offered $expected student card(s)',
+    'Customer who has employment type of "$user.employmentStatus" should be offered $expected student card(s)',
     ({ user, expected }) => {
       const result = eligibility(user, availableCards)
 

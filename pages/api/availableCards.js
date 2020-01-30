@@ -1,4 +1,4 @@
-import availableCards from 'business-logic/availableCards'
+import availableCards from 'constants/availableCards'
 
 export default (req, res) => {
   res.statusCode = 200

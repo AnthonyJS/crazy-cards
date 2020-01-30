@@ -1,7 +1,7 @@
 const EmploymentStatus = Object.freeze({
-  FULL_TIME: { id: '1', label: 'Full time' },
-  PART_TIME: { id: '2', label: 'Part time' },
-  STUDENT: { id: '3', label: 'Student' }
+  FULL_TIME: '1',
+  PART_TIME: '2',
+  STUDENT: '3'
 })
 
 export default EmploymentStatus
