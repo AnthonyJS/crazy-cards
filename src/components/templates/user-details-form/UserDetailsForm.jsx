@@ -33,7 +33,10 @@ const SignupForm = () => {
             .positive('Annual income must be greater than 0')
             .required('Required'),
           employmentStatus: Yup.string()
-            .oneOf(Object.values(EmploymentStatus), 'Invalid employment status')
+            .oneOf(
+              Object.values(EmploymentStatus).map(e => `${e}`),
+              'Invalid employment status'
+            )
             .required('Required')
         })}
         onSubmit={(values, { setSubmitting }) => {
