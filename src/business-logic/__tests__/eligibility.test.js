@@ -1,23 +1,55 @@
-import users from './users'
-import availableCards from '../availableCards'
+import { fullTimeUser, partTimeUser, studentUser } from './test-data/users'
+import availableCards from 'constants/availableCards'
 import eligibility from '../eligibility'
+import employmentStatus from 'constants/employmentStatus'
+import each from 'jest-each'
 
 describe('Card eligibility', () => {
-  test('Only students should be offered Student Life card', () => {
-    const result = users.map(user => {
-      return {
-        user,
-        eligibleCards: eligibility(user, availableCards)
-      }
-    })
+  each`
+    user            | expected
+    ${studentUser}  | ${1}
+    ${fullTimeUser} | ${0}
+    ${partTimeUser} | ${0}
+    `.test(
+    'Customer who has employment type of "$user.employmentStatus.label" should be offered $expected student card(s)',
+    ({ user, expected }) => {
+      const result = eligibility(user, availableCards)
 
-    expect(
-      result
-        .filter(res => res.user.firstName == 'Elizabeth')
-        .eligibleCards.filter(r => r.title == 'Student Life').length,
-      to.be(1)
-    )
-  })
-  test('Anywhere Card should be offered to all applicants', () => {})
-  test('Liquid Card should only be offered to applicants earning over minimum salary specified', () => {})
+      expect(
+        result.filter(card => card.cardTitle === 'Student Life').length
+      ).toBe(expected)
+    }
+  )
+
+  each`
+    user            | expected
+    ${studentUser}  | ${1}
+    ${fullTimeUser} | ${1}
+    ${partTimeUser} | ${0}
+  `.test(
+    'Customer with salary of "$user.annualIncome" should be offered $expected Liquid Card(s)',
+    ({ user, expected }) => {
+      const result = eligibility(user, availableCards)
+
+      expect(
+        result.filter(card => card.cardTitle === 'Liquid Card').length
+      ).toBe(expected)
+    }
+  )
+
+  each`
+    user            | expected
+    ${studentUser}  | ${1}
+    ${fullTimeUser} | ${1}
+    ${partTimeUser} | ${1}
+`.test(
+    'Customer "$user.firstName $user.surname" should be offered $expected Anywhere Card(s)',
+    ({ user, expected }) => {
+      const result = eligibility(user, availableCards)
+
+      expect(
+        result.filter(card => card.cardTitle === 'Anywhere Card').length
+      ).toBe(expected)
+    }
+  )
 })
