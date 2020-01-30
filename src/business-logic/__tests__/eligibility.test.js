@@ -15,8 +15,8 @@ describe('Card eligibility', () => {
       const result = eligibility(user, availableCards)
 
       expect(
-        result.filter(card => card.cardTitle === 'Student Life').length
-      ).toBe(expected)
+        result.filter(card => card.cardTitle === 'Student Life')
+      ).toHaveLength(expected)
     }
   )
 
@@ -31,8 +31,8 @@ describe('Card eligibility', () => {
       const result = eligibility(user, availableCards)
 
       expect(
-        result.filter(card => card.cardTitle === 'Liquid Card').length
-      ).toBe(expected)
+        result.filter(card => card.cardTitle === 'Liquid Card')
+      ).toHaveLength(expected)
     }
   )
 
@@ -47,8 +47,8 @@ describe('Card eligibility', () => {
       const result = eligibility(user, availableCards)
 
       expect(
-        result.filter(card => card.cardTitle === 'Anywhere Card').length
-      ).toBe(expected)
+        result.filter(card => card.cardTitle === 'Anywhere Card')
+      ).toHaveLength(expected)
     }
   )
 })
