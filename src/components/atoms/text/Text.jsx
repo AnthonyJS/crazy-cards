@@ -13,6 +13,10 @@ const Text = styled.span(
         fontSize: '4em',
         lineHeight: '1.5em'
       },
+      title: {
+        fontSize: '2em',
+        lineHeight: '1.5em'
+      },
       body: {
         fontSize: '1.5em'
       },

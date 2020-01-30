@@ -4,4 +4,15 @@ const EmploymentStatus = Object.freeze({
   STUDENT: '3'
 })
 
+const FakeI18n = statusId => {
+  const englishTranslations = {
+    '1': 'Full time',
+    '2': 'Part time',
+    '3': 'Student'
+  }
+
+  return englishTranslations[statusId]
+}
+
+export { FakeI18n }
 export default EmploymentStatus

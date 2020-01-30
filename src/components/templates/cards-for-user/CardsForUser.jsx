@@ -55,6 +55,7 @@ const CardsForUser = () => {
       </Fixed>
       {/* <pre>{JSON.stringify(userDetails)}</pre>
       <pre>{JSON.stringify(cards)}</pre> */}
+      <Text variant="title">Click on a card to add it to your basket</Text>
       {cards.map(card => (
         <Card
           onClick={() => clickHandler(card.id)}

@@ -7,7 +7,7 @@ import Alignment from 'components/atoms/alignment'
 import { Text } from 'components/atoms'
 import { useUserContext } from 'contexts/UserContext'
 import Router from 'next/router'
-import EmploymentStatus from 'constants/employmentStatus'
+import EmploymentStatus, { FakeI18n } from 'constants/employmentStatus'
 import styled from 'styled-components'
 import media from 'constants/deviceWidths'
 
@@ -37,7 +37,6 @@ const SignupForm = () => {
             .required('Required')
         })}
         onSubmit={(values, { setSubmitting }) => {
-          console.log('values', values)
           setUserDetails({
             ...values
           })
@@ -52,13 +51,10 @@ const SignupForm = () => {
 
             <DropDown label="Employment Status" name="employmentStatus">
               <option value="">-- select --</option>
-              {Object.entries(EmploymentStatus).map(([key, value]) => {
-                console.log('key', key)
-                console.log('value', value)
-
+              {Object.values(EmploymentStatus).map(value => {
                 return (
                   <option key={value} value={value}>
-                    {key}
+                    {FakeI18n(value)}
                   </option>
                 )
               })}
