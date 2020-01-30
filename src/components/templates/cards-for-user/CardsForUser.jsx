@@ -5,14 +5,15 @@ import Card from 'components/organisms/card'
 import { Text } from 'components/atoms'
 import styled from 'styled-components'
 import axios from 'axios'
+import Link from 'next/link'
 
 const actions = {
-  SELECT_CARD: 'SELECT_CARD'
+  TOGGLE_CARD_SELECTION: 'TOGGLE_CARD_SELECTION'
 }
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case actions.SELECT_CARD:
+    case actions.TOGGLE_CARD_SELECTION:
       return state.includes(action.payload)
         ? [...state.filter(item => item != action.payload)]
         : [...state, action.payload]
@@ -29,7 +30,7 @@ const CardsForUser = () => {
   const [selectedCards, dispatch] = useReducer(reducer, [])
 
   const clickHandler = id => {
-    dispatch({ type: actions.SELECT_CARD, payload: id })
+    dispatch({ type: actions.TOGGLE_CARD_SELECTION, payload: id })
   }
 
   useEffect(() => {
@@ -64,6 +65,9 @@ const CardsForUser = () => {
           {...card}
         />
       ))}
+      <Link href="/">
+        <a>Back</a>
+      </Link>
     </div>
   )
 }
