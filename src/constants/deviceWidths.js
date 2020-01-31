@@ -1,11 +1,8 @@
 import { css } from 'styled-components'
 
 const smallMinWidth = 320
-
 const mediumMinWidth = 764
-
 const largeMinWidth = 1028
-
 const extraLargeMinWidth = 1366
 
 export const sizes = {
