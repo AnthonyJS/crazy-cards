@@ -2,7 +2,7 @@ import { useUserContext } from 'contexts/UserContext'
 import eligibility from 'business-logic/eligibility'
 import { useEffect, useState, useReducer } from 'react'
 import { Card, CreditAvailable } from 'components/organisms'
-import { Text } from 'components/atoms'
+import { Text, Grid } from 'components/atoms'
 import axios from 'axios'
 import Link from 'next/link'
 import { actions, reducer } from './cardSelectionReducer'
@@ -39,14 +39,16 @@ const CardsForUser = () => {
         cardsChosenByUser={cardsChosenByUser}
       />
       <Text variant="title">Click on a card to add it to your basket</Text>
-      {possibleCardsForUser.map(card => (
-        <Card
-          onClick={() => clickHandler(card.id)}
-          selected={cardsChosenByUser.includes(card.id)}
-          key={card.id}
-          {...card}
-        />
-      ))}
+      <Grid justifyItems="center">
+        {possibleCardsForUser.map(card => (
+          <Card
+            onClick={() => clickHandler(card.id)}
+            selected={cardsChosenByUser.includes(card.id)}
+            key={card.id}
+            {...card}
+          />
+        ))}
+      </Grid>
       <Link href="/">
         <a>Back</a>
       </Link>

@@ -1,16 +1,21 @@
-import Text from 'components/atoms/text'
+import { Text, Alignment } from 'components/atoms'
 import styled from 'styled-components'
 import media from 'constants/deviceWidths'
+import HeaderText from './headerText'
 
 const Master = ({ children }) => (
   <Layout>
     <Header>
-      <Text as="h1" variant="heading">
-        Crazy Cards
-      </Text>
+      <Alignment justifyContent="center" py={4}>
+        <Text variant="fixedWidth">
+          <pre>
+            <code>{HeaderText}</code>
+          </pre>
+        </Text>
+      </Alignment>
     </Header>
     <Content>{children}</Content>
-    <Footer>footer</Footer>
+    <Footer>Made by Anthony Simpson 2020</Footer>
   </Layout>
 )
 
@@ -29,9 +34,9 @@ const Layout = styled.div`
   `}
 
   grid-template-areas:
-    'header header header'
+    '. header .'
     '. body .'
-    'footer footer footer';
+    '. footer .';
 `
 
 const Content = styled.div`

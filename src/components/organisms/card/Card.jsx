@@ -49,12 +49,12 @@ const CardStyled = styled.div`
   display: flex;
   flex-direction: column;
   /* TODO: Make these responsive */
-  width: 350px;
+  width: 330px;
   height: 200px;
   border-radius: 7px;
-  padding: 20px;
+  padding: 10px;
+  margin: 20px 0 20px 0;
   color: white;
-  margin: 30px;
   cursor: pointer;
   /* TODO: Use tokens for colors */
   box-shadow: 10px 10px 42px -3px rgba(0, 0, 0, 0.45);

@@ -1,8 +1,8 @@
 import styled from 'styled-components'
-import { variant, fontFamily, lineHeight } from 'styled-system'
+import { variant, typography } from 'styled-system'
 
 const Text = styled.span(
-  {},
+  { typography },
   variant({
     variants: {
       heading: {
@@ -27,6 +27,11 @@ const Text = styled.span(
       error: {
         fontSize: '1.5em',
         color: 'red'
+      },
+      fixedWidth: {
+        fontSize: '0.7em',
+        lineHeight: '1em',
+        fontFamily: 'Courier'
       }
     }
   })

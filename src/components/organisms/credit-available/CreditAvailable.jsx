@@ -1,12 +1,16 @@
-import { Text } from 'components/atoms'
+import { Text, Alignment } from 'components/atoms'
 import styled from 'styled-components'
 
 const CreditAvailable = ({ allCards, cardsChosenByUser }) => (
   <Fixed>
-    <Text variant="subHeading">Credit available:&nbsp;</Text>
-    <Text variant="heading">
-      £{calculateAvailableCreditForUser(allCards, cardsChosenByUser)}
-    </Text>
+    <Alignment justifyContent="center" alignItems="center">
+      <Text variant="subHeading" color="white">
+        Credit available:&nbsp;
+      </Text>
+      <Text variant="heading">
+        £{calculateAvailableCreditForUser(allCards, cardsChosenByUser)}
+      </Text>
+    </Alignment>
   </Fixed>
 )
 
@@ -17,9 +21,11 @@ const calculateAvailableCreditForUser = (allCards, cardsChosenByUser) =>
 
 const Fixed = styled.div`
   position: sticky;
+  border-radius: 100px;
   top: 0;
   z-index: 10;
-  background: teal;
+  color: white;
+  background: linear-gradient(to right, #dc2430, #7b4397);
 `
 
 export default CreditAvailable

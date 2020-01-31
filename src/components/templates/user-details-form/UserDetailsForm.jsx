@@ -1,15 +1,13 @@
 import React from 'react'
-import { Formik, Form, validateYupSchema } from 'formik'
+import { Formik, Form } from 'formik'
 import * as Yup from 'yup'
 import { TextInput, DropDown } from 'components/molecules'
 import Button from 'components/atoms/button'
 import Alignment from 'components/atoms/alignment'
-import { Text } from 'components/atoms'
+import { Text, Grid } from 'components/atoms'
 import { useUserContext } from 'contexts/UserContext'
 import Router from 'next/router'
 import EmploymentStatus, { FakeI18n } from 'constants/employmentStatus'
-import styled from 'styled-components'
-import media from 'constants/deviceWidths'
 
 const SignupForm = () => {
   const { userDetails, setUserDetails } = useUserContext()
@@ -74,15 +72,5 @@ const SignupForm = () => {
     </>
   )
 }
-
-const Grid = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-column-gap: 40px;
-
-  ${media.m`
-    grid-template-columns: 1fr 1fr;
-  `}
-`
 
 export default SignupForm
