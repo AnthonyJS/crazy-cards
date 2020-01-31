@@ -1,9 +1,8 @@
 import { useUserContext } from 'contexts/UserContext'
 import eligibility from 'business-logic/eligibility'
 import { useEffect, useState, useReducer } from 'react'
-import Card from 'components/organisms/card'
+import { Card, CreditAvailable } from 'components/organisms'
 import { Text } from 'components/atoms'
-import styled from 'styled-components'
 import axios from 'axios'
 import Link from 'next/link'
 import { actions, reducer } from './cardSelectionReducer'
@@ -35,13 +34,11 @@ const CardsForUser = () => {
 
   return (
     <div>
-      <Fixed>
-        <CreditAvailable
-          amount={allCards
-            .filter(card => cardsChosenByUser.includes(card.id))
-            .reduce((acc, curr) => acc + curr.creditAvailable, 0)}
-        />
-      </Fixed>
+      <CreditAvailable
+        amount={allCards
+          .filter(card => cardsChosenByUser.includes(card.id))
+          .reduce((acc, curr) => acc + curr.creditAvailable, 0)}
+      />
       <Text variant="title">Click on a card to add it to your basket</Text>
       {possibleCardsForUser.map(card => (
         <Card
@@ -57,19 +54,5 @@ const CardsForUser = () => {
     </div>
   )
 }
-
-const Fixed = styled.div`
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background: teal;
-`
-
-const CreditAvailable = ({ amount }) => (
-  <div>
-    <Text variant="subHeading">Credit available:&nbsp;</Text>
-    <Text variant="heading">£{amount}</Text>
-  </div>
-)
 
 export default CardsForUser
