@@ -24,7 +24,7 @@ const Fixed = styled.div`
   border-radius: 100px;
   top: 10px;
   z-index: 10;
-  color: white;
+  color: ${({ theme }) => theme.colors.light};
   background: linear-gradient(to right, #dc2430, #7b4397);
 `
 

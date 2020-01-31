@@ -48,15 +48,13 @@ Card.propTypes = {
 const CardStyled = styled.div`
   display: flex;
   flex-direction: column;
-  /* TODO: Make these responsive */
   width: 330px;
   height: 200px;
   border-radius: 7px;
   padding: 10px;
   margin: 20px 0 20px 0;
-  color: white;
+  color: ${({ theme }) => theme.colors.light};
   cursor: pointer;
-  /* TODO: Use tokens for colors */
   box-shadow: 10px 10px 42px -3px rgba(0, 0, 0, 0.45);
   opacity: 0.7;
   background: linear-gradient(45deg, #2600c3, #e7005c);
