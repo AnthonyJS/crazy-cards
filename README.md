@@ -6,6 +6,8 @@
 
 `yarn storybook`
 
+`yarn test`
+
 # Technologies
 
 - React
@@ -26,3 +28,13 @@
   - organisms
   - templates
   - pages
+
+# Considerations for further development
+
+- Other currencies
+- Internationalisation
+- Typescript
+- SEO
+- Analytics
+- Accessibility audit
+- Security audit
