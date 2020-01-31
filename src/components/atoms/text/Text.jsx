@@ -1,8 +1,8 @@
 import styled from 'styled-components'
-import { variant, typography } from 'styled-system'
+import { variant } from 'styled-system'
 
 const Text = styled.span(
-  { typography },
+  {},
   variant({
     variants: {
       heading: {
