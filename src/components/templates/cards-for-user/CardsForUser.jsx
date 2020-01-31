@@ -9,8 +9,8 @@ import { actions, reducer } from './cardSelectionReducer'
 
 const CardsForUser = () => {
   const { userDetails } = useUserContext()
-  const [possibleCardsForUser, setPossibleCardsForUser] = useState([])
   const [allCards, setAllCards] = useState([])
+  const [possibleCardsForUser, setPossibleCardsForUser] = useState([])
   const [cardsChosenByUser, dispatchCardsChosenByUser] = useReducer(reducer, [])
 
   const clickHandler = id => {
@@ -21,24 +21,25 @@ const CardsForUser = () => {
   }
 
   useEffect(() => {
-    const loadAvailableCards = async () => {
+    const getAllCardsFromApi = async () => {
       const cards = await axios.get('/api/all-cards')
       setAllCards(cards.data)
     }
-    loadAvailableCards()
+    getAllCardsFromApi()
   }, [])
 
   useEffect(() => setPossibleCardsForUser(eligibility(userDetails, allCards)), [
     allCards
   ])
 
+  const calculateAvailableCredit = () =>
+    allCards
+      .filter(card => cardsChosenByUser.includes(card.id))
+      .reduce((acc, curr) => acc + curr.creditAvailable, 0)
+
   return (
-    <div>
-      <CreditAvailable
-        amount={allCards
-          .filter(card => cardsChosenByUser.includes(card.id))
-          .reduce((acc, curr) => acc + curr.creditAvailable, 0)}
-      />
+    <>
+      <CreditAvailable amount={calculateAvailableCredit()} />
       <Text variant="title">Click on a card to add it to your basket</Text>
       {possibleCardsForUser.map(card => (
         <Card
@@ -51,7 +52,7 @@ const CardsForUser = () => {
       <Link href="/">
         <a>Back</a>
       </Link>
-    </div>
+    </>
   )
 }
 
