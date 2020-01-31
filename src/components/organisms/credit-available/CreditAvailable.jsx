@@ -29,3 +29,4 @@ const Fixed = styled.div`
 `
 
 export default CreditAvailable
+export { calculateAvailableCreditForUser }
