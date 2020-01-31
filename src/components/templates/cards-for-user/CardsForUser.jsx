@@ -2,7 +2,7 @@ import { useUserContext } from 'contexts/UserContext'
 import eligibility from 'business-logic/eligibility'
 import { useEffect, useState, useReducer } from 'react'
 import { Card, CreditAvailable } from 'components/organisms'
-import { Text, Grid } from 'components/atoms'
+import { Text, Grid, Alignment } from 'components/atoms'
 import axios from 'axios'
 import Link from 'next/link'
 import { actions, reducer } from './cardSelectionReducer'
@@ -38,7 +38,9 @@ const CardsForUser = () => {
         allCards={allCards}
         cardsChosenByUser={cardsChosenByUser}
       />
-      <Text variant="title">Click on a card to add it to your basket</Text>
+      <Alignment justifyContent="center" py={3}>
+        <Text variant="title">Click on a card to add it to your basket</Text>
+      </Alignment>
       <Grid justifyItems="center">
         {possibleCardsForUser.map(card => (
           <Card

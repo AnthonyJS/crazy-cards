@@ -7,7 +7,7 @@ const Master = ({ children }) => (
   <Layout>
     <Header>
       <Alignment justifyContent="center" py={4}>
-        <Text variant="fixedWidth">
+        <Text variant={{ s: 'fixedWidth', m: 'fixedWidthBig' }}>
           <pre>
             <code>{HeaderText}</code>
           </pre>

@@ -32,6 +32,11 @@ const Text = styled.span(
         fontSize: '0.7em',
         lineHeight: '1em',
         fontFamily: 'Courier'
+      },
+      fixedWidthBig: {
+        fontSize: '1.2em',
+        lineHeight: '1em',
+        fontFamily: 'Courier'
       }
     }
   })
