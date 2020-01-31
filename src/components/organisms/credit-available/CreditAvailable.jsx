@@ -22,7 +22,7 @@ const calculateAvailableCreditForUser = (allCards, cardsChosenByUser) =>
 const Fixed = styled.div`
   position: sticky;
   border-radius: 100px;
-  top: 0;
+  top: 10px;
   z-index: 10;
   color: white;
   background: linear-gradient(to right, #dc2430, #7b4397);

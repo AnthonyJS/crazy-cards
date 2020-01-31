@@ -14,7 +14,7 @@ const Master = ({ children }) => (
         </Text>
       </Alignment>
     </Header>
-    <Content>{children}</Content>
+    <Main>{children}</Main>
     <Footer>Made by Anthony Simpson 2020</Footer>
   </Layout>
 )
@@ -35,12 +35,12 @@ const Layout = styled.div`
 
   grid-template-areas:
     '. header .'
-    '. body .'
+    '. main .'
     '. footer .';
 `
 
-const Content = styled.div`
-  grid-area: body;
+const Main = styled.main`
+  grid-area: main;
 `
 
 const Header = styled.header`
