@@ -1,42 +1,23 @@
 import React from 'react'
 import { Formik, Form } from 'formik'
-import * as Yup from 'yup'
 import { TextInput, DropDown } from 'components/molecules'
-import Button from 'components/atoms/button'
-import Alignment from 'components/atoms/alignment'
-import { Text, Grid } from 'components/atoms'
+import { Text, Grid, Alignment, Button } from 'components/atoms'
 import { useUserContext } from 'contexts/UserContext'
 import Router from 'next/router'
 import EmploymentStatus, { FakeI18n } from 'constants/employmentStatus'
+import formValidationSchema from './formValidationSchema'
 
 const SignupForm = () => {
   const { userDetails, setUserDetails } = useUserContext()
 
   return (
     <>
-      <h1>Find out which cards could work for you...</h1>
+      <Alignment>Find out which cards could work for you...</Alignment>
       <Formik
         initialValues={{
           ...userDetails
         }}
-        validationSchema={Yup.object({
-          firstName: Yup.string()
-            .max(15, 'Must be 15 characters or less')
-            .required('Required'),
-          lastName: Yup.string()
-            .max(20, 'Must be 20 characters or less')
-            .required('Required'),
-          annualIncome: Yup.number()
-            .typeError('Annual income must be a number')
-            .positive('Annual income must be greater than 0')
-            .required('Required'),
-          employmentStatus: Yup.string()
-            .oneOf(
-              Object.values(EmploymentStatus).map(e => `${e}`),
-              'Invalid employment status'
-            )
-            .required('Required')
-        })}
+        validationSchema={formValidationSchema}
         onSubmit={(values, { setSubmitting }) => {
           setUserDetails({
             ...values
