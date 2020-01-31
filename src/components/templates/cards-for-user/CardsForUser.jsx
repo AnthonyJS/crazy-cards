@@ -38,9 +38,6 @@ const CardsForUser = () => {
         allCards={allCards}
         cardsChosenByUser={cardsChosenByUser}
       />
-      <Alignment justifyContent="center" py={3}>
-        <Text variant="title">Click on a card to add it to your basket</Text>
-      </Alignment>
       <Grid justifyItems="center">
         {possibleCardsForUser.map(card => (
           <Card

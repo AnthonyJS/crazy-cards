@@ -12,7 +12,11 @@ const SignupForm = () => {
 
   return (
     <>
-      <Alignment>Find out which cards could work for you...</Alignment>
+      <Alignment justifyContent="center">
+        <Text variant="subHeading">
+          Find out which cards could work for you...
+        </Text>
+      </Alignment>
       <Formik
         initialValues={{
           ...userDetails
