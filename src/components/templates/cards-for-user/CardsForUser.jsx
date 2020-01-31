@@ -32,14 +32,12 @@ const CardsForUser = () => {
     allCards
   ])
 
-  const calculateAvailableCredit = () =>
-    allCards
-      .filter(card => cardsChosenByUser.includes(card.id))
-      .reduce((acc, curr) => acc + curr.creditAvailable, 0)
-
   return (
     <>
-      <CreditAvailable amount={calculateAvailableCredit()} />
+      <CreditAvailable
+        allCards={allCards}
+        cardsChosenByUser={cardsChosenByUser}
+      />
       <Text variant="title">Click on a card to add it to your basket</Text>
       {possibleCardsForUser.map(card => (
         <Card
