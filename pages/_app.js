@@ -3,6 +3,7 @@ import React from 'react'
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import { UserProvider } from 'contexts/UserContext'
 import Master from 'components/pages/master'
+import { Normalize } from 'styled-normalize'
 
 // TODO: Move breakpoints and theme to a separate file
 const smallMinWidth = 320
@@ -68,6 +69,7 @@ export default class MyApp extends App {
       <ThemeProvider theme={theme}>
         <UserProvider>
           <GlobalStyle />
+          <Normalize />
           <Master>
             <Component {...pageProps} />
           </Master>
