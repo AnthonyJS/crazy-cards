@@ -31,12 +31,14 @@ const Text = styled.span(
       fixedWidth: {
         fontSize: '0.7em',
         lineHeight: '1em',
-        fontFamily: 'Courier'
+        fontFamily: 'Courier',
+        fontWeight: 1000
       },
       fixedWidthBig: {
         fontSize: '1.2em',
         lineHeight: '1em',
-        fontFamily: 'Courier'
+        fontFamily: 'Courier',
+        fontWeight: 100
       }
     }
   })
