@@ -6,61 +6,47 @@ import { Text } from 'components/atoms'
 import styled from 'styled-components'
 import axios from 'axios'
 import Link from 'next/link'
-
-const actions = {
-  TOGGLE_CARD_SELECTION: 'TOGGLE_CARD_SELECTION'
-}
-
-const reducer = (state, action) => {
-  switch (action.type) {
-    case actions.TOGGLE_CARD_SELECTION:
-      return state.includes(action.payload)
-        ? [...state.filter(item => item != action.payload)]
-        : [...state, action.payload]
-    default:
-      return state
-  }
-}
+import { actions, reducer } from './cardSelectionReducer'
 
 const CardsForUser = () => {
   const { userDetails } = useUserContext()
-  const [cards, setCards] = useState([])
-  const [availableCards, setAvailableCards] = useState([])
-
-  const [selectedCards, dispatch] = useReducer(reducer, [])
+  const [possibleCardsForUser, setPossibleCardsForUser] = useState([])
+  const [allCards, setAllCards] = useState([])
+  const [cardsChosenByUser, dispatchCardsChosenByUser] = useReducer(reducer, [])
 
   const clickHandler = id => {
-    dispatch({ type: actions.TOGGLE_CARD_SELECTION, payload: id })
+    dispatchCardsChosenByUser({
+      type: actions.TOGGLE_CARD_SELECTION,
+      payload: id
+    })
   }
 
   useEffect(() => {
     const loadAvailableCards = async () => {
-      const cards = await axios.get('/api/availablecards')
-      setAvailableCards(cards.data)
+      const cards = await axios.get('/api/all-cards')
+      setAllCards(cards.data)
     }
     loadAvailableCards()
   }, [])
 
-  useEffect(() => setCards(eligibility(userDetails, availableCards)), [
-    availableCards
+  useEffect(() => setPossibleCardsForUser(eligibility(userDetails, allCards)), [
+    allCards
   ])
 
   return (
     <div>
       <Fixed>
         <CreditAvailable
-          amount={availableCards
-            .filter(card => selectedCards.includes(card.id))
+          amount={allCards
+            .filter(card => cardsChosenByUser.includes(card.id))
             .reduce((acc, curr) => acc + curr.creditAvailable, 0)}
         />
       </Fixed>
-      {/* <pre>{JSON.stringify(userDetails)}</pre>
-      <pre>{JSON.stringify(cards)}</pre> */}
       <Text variant="title">Click on a card to add it to your basket</Text>
-      {cards.map(card => (
+      {possibleCardsForUser.map(card => (
         <Card
           onClick={() => clickHandler(card.id)}
-          selected={selectedCards.includes(card.id)}
+          selected={cardsChosenByUser.includes(card.id)}
           key={card.id}
           {...card}
         />
