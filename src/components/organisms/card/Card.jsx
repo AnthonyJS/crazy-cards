@@ -57,7 +57,7 @@ const CardStyled = styled.div`
   cursor: pointer;
   box-shadow: 10px 10px 42px -3px rgba(0, 0, 0, 0.45);
   opacity: 0.7;
-  background: linear-gradient(45deg, #2600c3, #e7005c);
+  background: 'white';
   transition: opacity 0.5s, transform 0.25s;
   ${({ selected }) => selected && 'transform: scale(1.1)'};
 

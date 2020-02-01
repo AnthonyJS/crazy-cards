@@ -33,7 +33,11 @@ const SignupForm = () => {
           <Grid>
             <TextInput label="First Name" name="firstName" type="text" />
             <TextInput label="Last Name" name="lastName" type="text" />
-            <TextInput label="Annual income" name="annualIncome" type="text" />
+            <TextInput
+              label="Annual income"
+              name="annualIncome"
+              type="number"
+            />
 
             <DropDown label="Employment Status" name="employmentStatus">
               <option value="">-- select --</option>

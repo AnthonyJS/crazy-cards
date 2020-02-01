@@ -26,6 +26,8 @@ const StyledSelect = styled.select`
   padding: 10px 15px 10px 15px;
   width: 100%;
   box-shadow: 10px 10px 13px -9px rgba(0, 0, 0, 0.47);
+  background: 'white';
+  -webkit-appearance: none;
 `
 
 export default DropDown
