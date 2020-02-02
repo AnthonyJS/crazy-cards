@@ -1,0 +1,366 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CardsForUserMarkup /> Should render 2 cards with one selected 1`] = `
+<DocumentFragment>
+  <div
+    class="FixedLabel__FixedStyle-sc-1e7rq3a-0 jrjzhp"
+  >
+    <div
+      class="Box-sc-141iqn8-0 Alignment-kk8fl8-0 eNZPnH"
+    >
+      <span
+        class="Text-twcj5n-0 fxjmmM"
+        color="white"
+      >
+        Credit available: 
+      </span>
+      <span
+        class="Text-twcj5n-0 fxjmmM"
+      >
+        £1200
+      </span>
+    </div>
+  </div>
+  <div
+    class="Grid-sc-1xz7oov-0 hBflZB"
+  >
+    <div
+      class="Card__CardStyled-pjwtoy-0 dJOtkD"
+    >
+      <div
+        class="Box-sc-141iqn8-0 Alignment-kk8fl8-0 gyEoQt"
+      >
+        <span
+          class="Text-twcj5n-0 gTWVCW"
+        >
+          Student Life
+        </span>
+      </div>
+      <div>
+        <span
+          class="Text-twcj5n-0 eyBDVE"
+        >
+          Apr:  
+        </span>
+        <span
+          class="Text-twcj5n-0 hEKyEh"
+        >
+          18.9%
+        </span>
+      </div>
+      <div>
+        <span
+          class="Text-twcj5n-0 eyBDVE"
+        >
+          Balance Transfer Offer Duration:  
+        </span>
+        <span
+          class="Text-twcj5n-0 hEKyEh"
+        >
+          0 Months
+        </span>
+      </div>
+      <div>
+        <span
+          class="Text-twcj5n-0 eyBDVE"
+        >
+          Purchase Offer Duration: 
+        </span>
+        <span
+          class="Text-twcj5n-0 hEKyEh"
+        >
+          6 Months
+        </span>
+      </div>
+      <div>
+        <span
+          class="Text-twcj5n-0 eyBDVE"
+        >
+          Credit Available:  
+        </span>
+        <span
+          class="Text-twcj5n-0 hEKyEh"
+        >
+          £1200
+        </span>
+      </div>
+    </div>
+    <div
+      class="Card__CardStyled-pjwtoy-0 fokrGT"
+    >
+      <div
+        class="Box-sc-141iqn8-0 Alignment-kk8fl8-0 gyEoQt"
+      >
+        <span
+          class="Text-twcj5n-0 gTWVCW"
+        >
+          Anywhere Card
+        </span>
+      </div>
+      <div>
+        <span
+          class="Text-twcj5n-0 eyBDVE"
+        >
+          Apr:  
+        </span>
+        <span
+          class="Text-twcj5n-0 hEKyEh"
+        >
+          33.9%
+        </span>
+      </div>
+      <div>
+        <span
+          class="Text-twcj5n-0 eyBDVE"
+        >
+          Balance Transfer Offer Duration:  
+        </span>
+        <span
+          class="Text-twcj5n-0 hEKyEh"
+        >
+          0 Months
+        </span>
+      </div>
+      <div>
+        <span
+          class="Text-twcj5n-0 eyBDVE"
+        >
+          Purchase Offer Duration: 
+        </span>
+        <span
+          class="Text-twcj5n-0 hEKyEh"
+        >
+          0 Months
+        </span>
+      </div>
+      <div>
+        <span
+          class="Text-twcj5n-0 eyBDVE"
+        >
+          Credit Available:  
+        </span>
+        <span
+          class="Text-twcj5n-0 hEKyEh"
+        >
+          £300
+        </span>
+      </div>
+    </div>
+  </div>
+  <a
+    href="/"
+  >
+    Back
+  </a>
+</DocumentFragment>
+`;
+
+exports[`<CardsForUserMarkup /> Should render all cards with none selected 1`] = `
+<DocumentFragment>
+  <div
+    class="FixedLabel__FixedStyle-sc-1e7rq3a-0 jrjzhp"
+  >
+    <div
+      class="Box-sc-141iqn8-0 Alignment-kk8fl8-0 eNZPnH"
+    >
+      <span
+        class="Text-twcj5n-0 fxjmmM"
+      >
+        Click the cards 💳 to choose
+      </span>
+    </div>
+  </div>
+  <div
+    class="Grid-sc-1xz7oov-0 hBflZB"
+  >
+    <div
+      class="Card__CardStyled-pjwtoy-0 fokrGT"
+    >
+      <div
+        class="Box-sc-141iqn8-0 Alignment-kk8fl8-0 gyEoQt"
+      >
+        <span
+          class="Text-twcj5n-0 gTWVCW"
+        >
+          Student Life
+        </span>
+      </div>
+      <div>
+        <span
+          class="Text-twcj5n-0 eyBDVE"
+        >
+          Apr:  
+        </span>
+        <span
+          class="Text-twcj5n-0 hEKyEh"
+        >
+          18.9%
+        </span>
+      </div>
+      <div>
+        <span
+          class="Text-twcj5n-0 eyBDVE"
+        >
+          Balance Transfer Offer Duration:  
+        </span>
+        <span
+          class="Text-twcj5n-0 hEKyEh"
+        >
+          0 Months
+        </span>
+      </div>
+      <div>
+        <span
+          class="Text-twcj5n-0 eyBDVE"
+        >
+          Purchase Offer Duration: 
+        </span>
+        <span
+          class="Text-twcj5n-0 hEKyEh"
+        >
+          6 Months
+        </span>
+      </div>
+      <div>
+        <span
+          class="Text-twcj5n-0 eyBDVE"
+        >
+          Credit Available:  
+        </span>
+        <span
+          class="Text-twcj5n-0 hEKyEh"
+        >
+          £1200
+        </span>
+      </div>
+    </div>
+    <div
+      class="Card__CardStyled-pjwtoy-0 fokrGT"
+    >
+      <div
+        class="Box-sc-141iqn8-0 Alignment-kk8fl8-0 gyEoQt"
+      >
+        <span
+          class="Text-twcj5n-0 gTWVCW"
+        >
+          Anywhere Card
+        </span>
+      </div>
+      <div>
+        <span
+          class="Text-twcj5n-0 eyBDVE"
+        >
+          Apr:  
+        </span>
+        <span
+          class="Text-twcj5n-0 hEKyEh"
+        >
+          33.9%
+        </span>
+      </div>
+      <div>
+        <span
+          class="Text-twcj5n-0 eyBDVE"
+        >
+          Balance Transfer Offer Duration:  
+        </span>
+        <span
+          class="Text-twcj5n-0 hEKyEh"
+        >
+          0 Months
+        </span>
+      </div>
+      <div>
+        <span
+          class="Text-twcj5n-0 eyBDVE"
+        >
+          Purchase Offer Duration: 
+        </span>
+        <span
+          class="Text-twcj5n-0 hEKyEh"
+        >
+          0 Months
+        </span>
+      </div>
+      <div>
+        <span
+          class="Text-twcj5n-0 eyBDVE"
+        >
+          Credit Available:  
+        </span>
+        <span
+          class="Text-twcj5n-0 hEKyEh"
+        >
+          £300
+        </span>
+      </div>
+    </div>
+    <div
+      class="Card__CardStyled-pjwtoy-0 fokrGT"
+    >
+      <div
+        class="Box-sc-141iqn8-0 Alignment-kk8fl8-0 gyEoQt"
+      >
+        <span
+          class="Text-twcj5n-0 gTWVCW"
+        >
+          Liquid Card
+        </span>
+      </div>
+      <div>
+        <span
+          class="Text-twcj5n-0 eyBDVE"
+        >
+          Apr:  
+        </span>
+        <span
+          class="Text-twcj5n-0 hEKyEh"
+        >
+          33.9%
+        </span>
+      </div>
+      <div>
+        <span
+          class="Text-twcj5n-0 eyBDVE"
+        >
+          Balance Transfer Offer Duration:  
+        </span>
+        <span
+          class="Text-twcj5n-0 hEKyEh"
+        >
+          12 Months
+        </span>
+      </div>
+      <div>
+        <span
+          class="Text-twcj5n-0 eyBDVE"
+        >
+          Purchase Offer Duration: 
+        </span>
+        <span
+          class="Text-twcj5n-0 hEKyEh"
+        >
+          6 Months
+        </span>
+      </div>
+      <div>
+        <span
+          class="Text-twcj5n-0 eyBDVE"
+        >
+          Credit Available:  
+        </span>
+        <span
+          class="Text-twcj5n-0 hEKyEh"
+        >
+          £3000
+        </span>
+      </div>
+    </div>
+  </div>
+  <a
+    href="/"
+  >
+    Back
+  </a>
+</DocumentFragment>
+`;
