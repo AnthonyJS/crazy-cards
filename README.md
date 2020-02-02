@@ -1,14 +1,14 @@
 # Crazy Cards demo app
 
-## Play around with Crazy Cards app
+## Link to the Crazy Cards app
 
-You can have a go using Crazy Cards on the following link: https://crazy-cards.now.sh/
+The Crazy Cards site is deployed for you to use on the following link: https://crazy-cards.now.sh/
 
 ## Steps to get Crazy Cards running locally
 
 ### NPM
 
-- To download all of the required dependencies from NPM:
+- To download all of the required dependencies using NPM:
   `npm install`
 
 - To run the application locally:
@@ -22,7 +22,7 @@ You can have a go using Crazy Cards on the following link: https://crazy-cards.n
 
 ### Yarn
 
-- To download all of the required dependencies from Yarn:
+- To download all of the required dependencies using Yarn:
   `yarn`
 
 - To run the application locally:
@@ -42,7 +42,7 @@ You can have a go using Crazy Cards on the following link: https://crazy-cards.n
 
 - Styled Components with Styled System
 
-  I used Styled Components because of the flexibility and power it provides for conditionally styling React components. I supplemented it with Styled System because it provides a logical and intuitive means of adding responsive web styling based on viewport widths, as well as stylistic variants.
+  I used Styled Components because of the flexibility and power it provides for conditionally styling React components. I supplemented it with [Styled System](https://styled-system.com/) because it provides a logical and intuitive means of adding responsive web styling based on viewport widths, as well as stylistic variants.
 
 - Formik
 
@@ -50,7 +50,7 @@ You can have a go using Crazy Cards on the following link: https://crazy-cards.n
 
 - Atomic design
 
-  I used [Atomic Design](https://bradfrost.com/blog/post/atomic-web-design/) to organise the components within the `src/components` folder to help provide some structure and organisation to the components.
+  I used [Atomic Design](https://bradfrost.com/blog/post/atomic-web-design/) to organise the components within the `src/components` folder to help provide structure and organisation to the components.
 
   - atoms
   - molecules
@@ -68,8 +68,8 @@ There are many aspects of the project that I would like to develop further but w
 
 - Accessibility
 
-  Add the moment, card selection on the results page can only be done using mouse / touch. I would like to add keyboard controls to this.
+  At the moment, card selection on the results page can only be done using mouse / touch. I would like to add keyboard controls to this to make the UI accessible to more users.
 
 - Internationalisation (i18n)
 
-  At the moment, all of the text is hardcoded to English and GBP. It would be good to plug in [React-Intl](https://github.com/formatjs/react-intl) to allow for other languages, currencies and numeric formatting.
+  All of the text is hardcoded to English and GBP. It would be good to plug in [React-Intl](https://github.com/formatjs/react-intl) to allow for other languages, currencies and numeric formatting.
