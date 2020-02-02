@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import Alignment from 'components/atoms/alignment'
 import { Text } from 'components/atoms'
 import PropTypes from 'prop-types'
+import media from 'constants/deviceWidths'
 
 const Card = ({
   cardTitle,
@@ -48,8 +49,11 @@ Card.propTypes = {
 const CardStyled = styled.div`
   display: flex;
   flex-direction: column;
-  width: 330px;
-  height: 200px;
+  width: 90vw;
+  ${media.m`
+    width: 330px;
+  `}
+  height: auto;
   border-radius: 7px;
   padding: 10px;
   margin: 20px 0 20px 0;
@@ -59,7 +63,7 @@ const CardStyled = styled.div`
   opacity: 0.7;
   background: linear-gradient(45deg, #2600c3, #e7005c);
   transition: opacity 0.5s, transform 0.25s;
-  ${({ selected }) => selected && 'transform: scale(1.1)'};
+  ${({ selected }) => selected && 'transform: scale(1.025)'};
 
   & :hover {
     opacity: 1;

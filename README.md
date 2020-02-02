@@ -8,6 +8,8 @@
 
 `yarn test`
 
+[See working demo](https://crazy-cards.now.sh)
+
 # Technologies
 
 - React

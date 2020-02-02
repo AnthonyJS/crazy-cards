@@ -1,5 +1,5 @@
 import { useField } from 'formik'
-import styled from '@emotion/styled'
+import styled from 'styled-components'
 import { Text, Box } from 'components/atoms'
 
 const DropDown = ({ label, ...props }) => {
@@ -26,6 +26,8 @@ const StyledSelect = styled.select`
   padding: 10px 15px 10px 15px;
   width: 100%;
   box-shadow: 10px 10px 13px -9px rgba(0, 0, 0, 0.47);
+  background: ${({ theme }) => theme.colors.light};
+  -webkit-appearance: none;
 `
 
 export default DropDown

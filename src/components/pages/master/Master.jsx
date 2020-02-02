@@ -1,15 +1,20 @@
 import { Text, Alignment } from 'components/atoms'
 import styled from 'styled-components'
 import media from 'constants/deviceWidths'
-import HeaderText from './headerText'
+import { Crazy, Cards } from './headerText'
 
 const Master = ({ children }) => (
   <Layout>
     <Header>
-      <Alignment justifyContent="center" py={4}>
+      <Alignment flexWrap="wrap" justifyContent="center" py={4}>
         <Text variant={{ s: 'fixedWidth', m: 'fixedWidthBig' }}>
           <pre>
-            <code>{HeaderText}</code>
+            <code>{Crazy}</code>
+          </pre>
+        </Text>
+        <Text variant={{ s: 'fixedWidth', m: 'fixedWidthBig' }}>
+          <pre>
+            <code>{Cards}</code>
           </pre>
         </Text>
       </Alignment>
