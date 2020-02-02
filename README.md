@@ -62,7 +62,7 @@ You can have a go using Crazy Cards on the following link: https://crazy-cards.n
 
 There are many aspects of the project that I would like to develop further but was unable to due to time constraints. These include
 
-- Testing
+- Acceptance testing
 
   I would like to add end-to-end browser Acceptance tests using [Playwright](https://github.com/microsoft/playwright). This would simulate a user entering their details, click the submit button, being taken to the results page and selecting their desired cards.
 
