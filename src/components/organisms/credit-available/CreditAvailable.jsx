@@ -14,10 +14,12 @@ const CreditAvailable = ({ allCards, cardsChosenByUser }) => {
         </Text>
       ) : (
         <>
-          <Text variant="subHeading" color="white">
+          <Text variant={{ s: 'body', m: 'subHeading' }} color="white">
             Credit available:&nbsp;
           </Text>
-          <Text variant="heading">£{creditAvailable}</Text>
+          <Text variant={{ s: 'body', m: 'subHeading' }}>
+            £{creditAvailable}
+          </Text>
         </>
       )}
     </FixedLabel>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Formik, Form } from 'formik'
 import { TextInput, DropDown } from 'components/molecules'
-import { Text, Grid, Alignment, Button, FixedLabel } from 'components/atoms'
+import { Text, Grid, Alignment, Button } from 'components/atoms'
 import { useUserContext } from 'contexts/UserContext'
 import Router from 'next/router'
 import EmploymentStatus, { FakeI18n } from 'constants/employmentStatus'
@@ -12,11 +12,10 @@ const SignupForm = () => {
 
   return (
     <>
-      <FixedLabel>
-        <Text variant={{ s: 'title', l: 'subHeading' }}>
-          Find out which cards could work for you...
-        </Text>
-      </FixedLabel>
+      <Text variant={{ s: 'title', l: 'subHeading' }}>
+        Enter your details to find out which cards could work for you...
+      </Text>
+
       <Formik
         initialValues={{
           ...userDetails

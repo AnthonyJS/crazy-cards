@@ -6,13 +6,12 @@ import { Crazy, Cards } from './headerText'
 const Master = ({ children }) => (
   <Layout>
     <Header>
-      <Alignment flexDirection="column" justifyContent="center" py={4}>
+      <Alignment flexWrap="wrap" justifyContent="center" py={4}>
         <Text variant={{ s: 'fixedWidth', m: 'fixedWidthBig' }}>
           <pre>
             <code>{Crazy}</code>
           </pre>
         </Text>
-
         <Text variant={{ s: 'fixedWidth', m: 'fixedWidthBig' }}>
           <pre>
             <code>{Cards}</code>
