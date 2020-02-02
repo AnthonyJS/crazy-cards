@@ -57,7 +57,8 @@ const CardStyled = styled.div`
   border-radius: 7px;
   padding: 10px;
   margin: 20px 0 20px 0;
-  color: ${({ theme }) => theme.colors.light};
+  color: white;
+  /* color: ${({ theme }) => theme.colors.light}; */
   cursor: pointer;
   box-shadow: 10px 10px 42px -3px rgba(0, 0, 0, 0.45);
   opacity: 0.7;

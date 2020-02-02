@@ -3,7 +3,7 @@ import Card from '../Card'
 
 export default { title: 'Card' }
 
-export const withCard = () => (
+export const unselectedCard = () => (
   <>
     <Card
       cardTitle="Student Life"
@@ -12,6 +12,11 @@ export const withCard = () => (
       purchaseOfferDurationMonths={6}
       creditAvailable={1200}
     />
+  </>
+)
+
+export const selectedCard = () => (
+  <>
     <Card
       cardTitle="Student Life"
       apr={18.9}
