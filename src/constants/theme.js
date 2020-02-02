@@ -1,5 +1,4 @@
 import { sizes } from 'constants/deviceWidths'
-import { color } from 'styled-system'
 
 const breakpoints = ['0', `${sizes.m}px`, `${sizes.l}px`, `${sizes.xl}px`]
 
