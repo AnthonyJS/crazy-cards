@@ -94,3 +94,5 @@ There are many aspects of the project that I would like to develop further but w
   
   - Using React Context to store the user details in the `UserContext` is unnecessary complexity for an app with just two pages like this. However, it was a nice way of encapsulating the user state and will make passing the user details around simpler as the scope of the app increases.
 
+  - I've only got the credit card in Storybook at present. I would like to add all of the atom, molecule and organism components.
+  
