@@ -81,7 +81,11 @@ There are many aspects of the project that I would like to develop further but w
 - CI/CD 
 
   I would set up Github Actions so that it does a build and runs all the tests on each commit to the `develop` branch, and does a build, test and publish to now.sh whenever a pull request is confirmed from the `develop` into the `master` branch.  
-  
+
+- Loading 'skeletons'
+
+  It sometimes takes a second or two to load the available cards from the API. There should be some indication to the user during this time that data is being retrieved, either with a message, spinner or skeleton credit card placeholder.
+
 - Other notes
 
   - The business logic should be implemented server-side and hidden from anyone who might be inspecting the client side code. The API should take in the user details and return the eligible cards, rather than returning all the available cards and filtering on the client.
