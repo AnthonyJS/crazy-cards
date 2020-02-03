@@ -76,5 +76,5 @@ There are many aspects of the project that I would like to develop further but w
   
 - Other notes
 
-The business logic should be implemented server-side and hidden from anyone who might be inspecting the client side code. The API should take in the user details and return the eligible cards, rather than returning all the available cards and filtering on the client.
+  The business logic should be implemented server-side and hidden from anyone who might be inspecting the client side code. The API should take in the user details and return the eligible cards, rather than returning all the available cards and filtering on the client.
 
