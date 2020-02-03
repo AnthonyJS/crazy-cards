@@ -8,6 +8,8 @@ The Crazy Cards site is deployed for you to use on the following link: https://c
 
 ### NPM
 
+- Clone this repository
+
 - To download all of the required dependencies using NPM:
   `npm install`
 
@@ -21,6 +23,8 @@ The Crazy Cards site is deployed for you to use on the following link: https://c
   `npm test`
 
 ### Yarn
+
+- Clone this repository
 
 - To download all of the required dependencies using Yarn:
   `yarn`
