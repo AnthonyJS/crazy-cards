@@ -87,4 +87,6 @@ There are many aspects of the project that I would like to develop further but w
   - The business logic should be implemented server-side and hidden from anyone who might be inspecting the client side code. The API should take in the user details and return the eligible cards, rather than returning all the available cards and filtering on the client.
    
   - Not all of the user details are collected on the initial form, e.g. address and postcode.
+  
+  - Using React Context to store the user details in the `UserContext` is unnecessary complexity for an app with just two pages like this. However, it was a nice way of encapsulating the user state and will make passing the user details around simpler as the scope of the app increases.
 
