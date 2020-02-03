@@ -6,6 +6,8 @@ The Crazy Cards site is deployed for you to use on the following link: https://c
 
 ## Steps to get Crazy Cards running locally
 
+I have provided instructions below to get the site running with either NPM or Yarn - whichever is your preference.
+
 ### NPM
 
 - Clone this repository
@@ -21,6 +23,8 @@ The Crazy Cards site is deployed for you to use on the following link: https://c
 
 - To run the tests:
   `npm test`
+
+or...
 
 ### Yarn
 
