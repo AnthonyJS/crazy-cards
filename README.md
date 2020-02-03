@@ -78,7 +78,13 @@ There are many aspects of the project that I would like to develop further but w
 
   All of the text is hardcoded to English and GBP. It would be good to plug in [React-Intl](https://github.com/formatjs/react-intl) to allow for other languages, currencies and numeric formatting.
   
+- CI/CD 
+
+  I would set up Github Actions so that it does a build and runs all the tests on each commit to the `develop` branch, and does a build, test and publish to now.sh whenever a pull request is confirmed from the `develop` into the `master` branch.  
+  
 - Other notes
 
-  The business logic should be implemented server-side and hidden from anyone who might be inspecting the client side code. The API should take in the user details and return the eligible cards, rather than returning all the available cards and filtering on the client.
+  - The business logic should be implemented server-side and hidden from anyone who might be inspecting the client side code. The API should take in the user details and return the eligible cards, rather than returning all the available cards and filtering on the client.
+   
+  - Not all of the user details are collected on the initial form, e.g. address and postcode.
 
