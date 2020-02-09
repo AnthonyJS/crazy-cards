@@ -1,8 +1,17 @@
 import styled from 'styled-components'
 import Alignment from 'components/atoms/alignment'
 import { Text } from 'components/atoms'
-import PropTypes from 'prop-types'
-import media from 'constants/deviceWidths'
+// import media from 'constants/deviceWidths'
+
+interface Props {
+  cardTitle: string
+  apr: number
+  balanceTransferOfferDurationMonths: number
+  purchaseOfferDurationMonths: number
+  creditAvailable: number
+  selected: boolean
+  onClick: () => void
+}
 
 const Card = ({
   cardTitle,
@@ -12,7 +21,7 @@ const Card = ({
   creditAvailable,
   selected,
   onClick
-}) => (
+}: Props) => (
   <CardStyled selected={selected} onClick={onClick}>
     <Alignment justifyContent="center">
       <Text variant="subHeading">{cardTitle}</Text>
@@ -38,27 +47,20 @@ const Card = ({
   </CardStyled>
 )
 
-Card.propTypes = {
-  cardTitle: PropTypes.string,
-  apr: PropTypes.number,
-  balanceTransferOfferDurationMonths: PropTypes.number,
-  purchaseOfferDurationMonths: PropTypes.number,
-  creditAvailable: PropTypes.number
+interface ScProps {
+  selected: boolean
 }
 
-const CardStyled = styled.div`
+const CardStyled = styled.div<ScProps>`
   display: flex;
   flex-direction: column;
   width: 90vw;
-  ${media.m`
-    width: 330px;
-  `}
+
   height: auto;
   border-radius: 7px;
   padding: 10px;
   margin: 20px 0 20px 0;
   color: white;
-  /* color: ${({ theme }) => theme.colors.light}; */
   cursor: pointer;
   box-shadow: 10px 10px 42px -3px rgba(0, 0, 0, 0.45);
   opacity: 0.7;
@@ -70,5 +72,9 @@ const CardStyled = styled.div`
     opacity: 1;
   }
 `
+
+// ${media.m`
+// width: 330px;
+// `}
 
 export default Card
