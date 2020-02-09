@@ -8,7 +8,8 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "test": "jest",
-    "test:watch": "yarn test --watch"
+    "test:watch": "yarn test --watch",
+    "type-check": "tsc"
   },
   "dependencies": {
     "axios": "^0.19.2",
@@ -22,6 +23,10 @@
     "yup": "^0.28.0"
   },
   "devDependencies": {
+    "@types/node": "^12.12.21",
+    "@types/react": "^16.9.16",
+    "@types/react-dom": "^16.9.4",
+    "typescript": "3.7.3",
     "@babel/core": "^7.8.3",
     "@storybook/addon-actions": "^5.3.9",
     "@storybook/addon-links": "^5.3.9",
