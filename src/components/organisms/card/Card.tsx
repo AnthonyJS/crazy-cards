@@ -13,7 +13,7 @@ interface Props {
   onClick: () => void
 }
 
-const Card = ({
+const Card: React.FC<Props> = ({
   cardTitle,
   apr,
   balanceTransferOfferDurationMonths,
@@ -21,7 +21,7 @@ const Card = ({
   creditAvailable,
   selected,
   onClick
-}: Props) => (
+}) => (
   <CardStyled selected={selected} onClick={onClick}>
     <Alignment justifyContent="center">
       <Text variant="subHeading">{cardTitle}</Text>
