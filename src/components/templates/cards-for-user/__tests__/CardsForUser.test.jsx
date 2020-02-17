@@ -20,11 +20,7 @@ describe('<CardsForUser />', () => {
 
     const { asFragment } = render(
       <ThemeProvider theme={theme}>
-        <CardsForUser
-          allCards={cardData}
-          cardsChosenByUser={[]}
-          possibleCardsForUser={cardData}
-        />
+        <CardsForUser />
       </ThemeProvider>
     )
 
@@ -38,13 +34,10 @@ describe('<CardsForUser />', () => {
       [],
       cardData.slice(0, 2)
     ])
+
     const { asFragment } = render(
       <ThemeProvider theme={theme}>
-        <CardsForUser
-          allCards={cardData}
-          cardsChosenByUser={[1]}
-          possibleCardsForUser={cardData.slice(0, 2)}
-        />
+        <CardsForUser />
       </ThemeProvider>
     )
 
