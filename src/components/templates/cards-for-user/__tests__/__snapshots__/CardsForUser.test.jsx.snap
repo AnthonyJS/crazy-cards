@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<CardsForUserMarkup /> Should render 2 cards with one selected 1`] = `
+exports[`<CardsForUser /> Should render 2 cards with one selected 1`] = `
 <DocumentFragment>
   <div
     class="FixedLabel__FixedStyle-sc-1e7rq3a-0 jrjzhp"
@@ -10,14 +10,8 @@ exports[`<CardsForUserMarkup /> Should render 2 cards with one selected 1`] = `
     >
       <span
         class="Text-twcj5n-0 fxjmmM"
-        color="white"
       >
-        Credit available: 
-      </span>
-      <span
-        class="Text-twcj5n-0 fxjmmM"
-      >
-        £1200
+        Click the cards 💳 to choose
       </span>
     </div>
   </div>
@@ -25,7 +19,7 @@ exports[`<CardsForUserMarkup /> Should render 2 cards with one selected 1`] = `
     class="Grid-sc-1xz7oov-0 hBflZB"
   >
     <div
-      class="Card__CardStyled-pjwtoy-0 dJOtkD"
+      class="Card__CardStyled-pjwtoy-0 fokrGT"
     >
       <div
         class="Box-sc-141iqn8-0 Alignment-kk8fl8-0 gyEoQt"
@@ -155,7 +149,7 @@ exports[`<CardsForUserMarkup /> Should render 2 cards with one selected 1`] = `
 </DocumentFragment>
 `;
 
-exports[`<CardsForUserMarkup /> Should render all cards with none selected 1`] = `
+exports[`<CardsForUser /> Should render all cards with none selected 1`] = `
 <DocumentFragment>
   <div
     class="FixedLabel__FixedStyle-sc-1e7rq3a-0 jrjzhp"
