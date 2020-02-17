@@ -1,6 +1,16 @@
 import { Text, FixedLabel } from 'components/atoms'
 
-const CreditAvailable = ({ allCards, cardsChosenByUser }) => {
+interface ICreditAvailable {
+  allCards: ICard[]
+  cardsChosenByUser: number[]
+}
+
+interface ICard {
+  id: number
+  creditAvailable: number
+}
+
+const CreditAvailable = ({ allCards, cardsChosenByUser }: ICreditAvailable) => {
   const creditAvailable = calculateAvailableCreditForUser(
     allCards,
     cardsChosenByUser
@@ -26,10 +36,13 @@ const CreditAvailable = ({ allCards, cardsChosenByUser }) => {
   )
 }
 
-const calculateAvailableCreditForUser = (allCards, cardsChosenByUser) =>
+const calculateAvailableCreditForUser = (
+  allCards: ICard[],
+  cardsChosenByUser: number[]
+) =>
   allCards
-    .filter(card => cardsChosenByUser.includes(card.id))
-    .reduce((acc, curr) => acc + curr.creditAvailable, 0)
+    .filter((card: ICard) => cardsChosenByUser.includes(card.id))
+    .reduce((acc: number, curr: ICard) => acc + curr.creditAvailable, 0)
 
 export default CreditAvailable
 export { calculateAvailableCreditForUser }

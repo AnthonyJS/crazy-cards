@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { variant } from 'styled-system'
 
 interface Props {
-  variant?: string
+  variant?: string | {}
 }
 
 const Text = styled.span<Props>(

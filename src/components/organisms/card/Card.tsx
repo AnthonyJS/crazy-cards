@@ -4,6 +4,7 @@ import { Text } from 'components/atoms'
 // import media from 'constants/deviceWidths'
 
 type CardProps = {
+  id: number
   cardTitle: string
   apr: number
   balanceTransferOfferDurationMonths: number
