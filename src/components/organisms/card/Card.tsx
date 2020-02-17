@@ -3,14 +3,14 @@ import Alignment from 'components/atoms/alignment'
 import { Text } from 'components/atoms'
 // import media from 'constants/deviceWidths'
 
-interface Props {
+type CardProps = {
   cardTitle: string
   apr: number
   balanceTransferOfferDurationMonths: number
   purchaseOfferDurationMonths: number
   creditAvailable: number
   selected: boolean
-  onClick: () => void
+  onClick: () => {}
 }
 
 const Card = ({
@@ -21,7 +21,7 @@ const Card = ({
   creditAvailable,
   selected,
   onClick
-}: Props) => (
+}: CardProps) => (
   <CardStyled selected={selected} onClick={onClick}>
     <Alignment justifyContent="center">
       <Text variant="subHeading">{cardTitle}</Text>
@@ -47,11 +47,11 @@ const Card = ({
   </CardStyled>
 )
 
-interface ScProps {
+type CardStyledProps = {
   selected: boolean
 }
 
-const CardStyled = styled.div<ScProps>`
+const CardStyled = styled.div<CardStyledProps>`
   display: flex;
   flex-direction: column;
   width: 90vw;
