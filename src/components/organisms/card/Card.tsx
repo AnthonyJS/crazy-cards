@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 import Alignment from 'components/atoms/alignment'
 import { Text } from 'components/atoms'
-// import media from 'constants/deviceWidths'
+// TODO: Work out why module resolution isn't working here
+import media from '../../../constants/deviceWidths'
 
 type CardProps = {
   id: number
@@ -72,10 +73,10 @@ const CardStyled = styled.div<CardStyledProps>`
   & :hover {
     opacity: 1;
   }
-`
 
-// ${media.m`
-// width: 330px;
-// `}
+  ${media.m`
+    width: 330px;
+  `}
+`
 
 export default Card
