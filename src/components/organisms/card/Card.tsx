@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 import Alignment from 'components/atoms/alignment'
 import { Text } from 'components/atoms'
-// TODO: Work out why module resolution isn't working here
 import media from 'constants/deviceWidths'
 
 type CardProps = {
